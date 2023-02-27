@@ -7,7 +7,17 @@ const router = express.Router();
  */
 router.get('/', (req, res) => {
   // GET route code here
-});
+    const query = `SELECT * FROM runs`;
+    pool.query(query)
+      .then( result => {
+        res.send(result.rows);
+      })
+      .catch(err => {
+        console.log('ERROR: Get all runs', err);
+        res.sendStatus(500)
+      })
+  
+  });
 
 /**
  * POST route template
