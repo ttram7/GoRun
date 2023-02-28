@@ -19,7 +19,7 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
-import HomePage from '../HomePage/HomePage';
+import DashboardPage from '../DashboardPage/DashboardPage';
 import AddRunPage from '../AddRunPage/AddRunPage';
 
 import './App.css';
@@ -50,8 +50,8 @@ function App() {
             <AboutPage />
           </Route>
 
-          <ProtectedRoute exact path="/homepage">
-            <HomePage/>
+          <ProtectedRoute exact path="/dashboard">
+            <DashboardPage/>
           </ProtectedRoute>
 
           <ProtectedRoute exact path="/add-run">
@@ -98,8 +98,8 @@ function App() {
           >
             {user.id ?
               // If the user is already logged in, 
-              // redirect them to the /user page
-              <Redirect to="/user" />
+              // redirect them to the /dashboard page
+              <Redirect to="/dashboard" />
               :
               // Otherwise, show the registration page
               <RegisterPage />
@@ -112,8 +112,8 @@ function App() {
           >
             {user.id ?
               // If the user is already logged in, 
-              // redirect them to the /user page
-              <Redirect to="/user" />
+              // redirect them to the /dashboard page
+              <Redirect to="/dashboard" />
               :
               // Otherwise, show the Landing page
               <LandingPage />

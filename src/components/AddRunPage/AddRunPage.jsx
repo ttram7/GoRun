@@ -26,7 +26,7 @@ function AddRunPage() {
       difficulty: runDifficulty,
       notes: runNotes})
     .then(() => {
-        history.push('/homepage');
+        history.push('/dashboard');
         //edit later to be summary page
     }).catch((error) => {
         console.log(error);

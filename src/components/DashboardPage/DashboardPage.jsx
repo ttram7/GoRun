@@ -3,9 +3,10 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import {useDispatch, useSelector} from 'react-redux';
 import { useEffect, useState} from 'react';
 import axios from 'axios';
+import './DashboardPage.css'
 
 
-function HomePage() {
+function DashboardPage () {
   // add-in
   const [runList, setRunList] = useState([]);
   const dispatch = useDispatch();
@@ -29,16 +30,18 @@ function HomePage() {
 
   return (
     <div className="container">
-      <h2>HomePage</h2>
+      <h2>Dashboard</h2>
+      <div className="run-list">
       {runList.map(run => {
                     return (
-                        <div>{run.name}</div>
+                        <div className="indv-run">{run.name}</div>
                     );
                 })}
-      <LogOutButton className="btn" />
+      </div>
+      {/* <LogOutButton className="btn" /> */}
     </div>
   );
 }
 
 // this allows us to use <App /> in index.js
-export default HomePage;
+export default DashboardPage;
