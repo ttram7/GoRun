@@ -7,8 +7,9 @@ const router = express.Router();
  */
 router.get('/', (req, res) => {
   // GET route code here
-    const query = `SELECT * FROM runs`;
-    pool.query(query)
+  if (req.isAuthenticated()) {
+    const query = `SELECT * FROM runs WHERE "user_id" = $1`;
+    pool.query(query, [req.user.id])
       .then( result => {
         res.send(result.rows);
       })
@@ -16,8 +17,11 @@ router.get('/', (req, res) => {
         console.log('ERROR: Get all runs', err);
         res.sendStatus(500)
       })
-  
-  });
+  } else {
+    res.sendStatus(403);
+  }
+});
+
 
 /**
  * POST route template

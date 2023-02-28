@@ -20,6 +20,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import HomePage from '../HomePage/HomePage';
+import AddRunPage from '../AddRunPage/AddRunPage';
 
 import './App.css';
 
@@ -51,6 +52,10 @@ function App() {
 
           <ProtectedRoute exact path="/homepage">
             <HomePage/>
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/add-run">
+            <AddRunPage/>
           </ProtectedRoute>
 
           {/* For protected routes, the view could show one of several things on the same route.
