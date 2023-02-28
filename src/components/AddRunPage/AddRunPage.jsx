@@ -17,7 +17,14 @@ function AddRunPage() {
 
   const addNewRun = (event) => {
     event.preventDefault();
-    axios.post('/api/runs', {name: runName})
+    axios.post('/api/runs', 
+      {name: runName,
+      date: runDate,
+      time: runTime,
+      distance: runDistance,
+      duration: runDuration,
+      difficulty: runDifficulty,
+      notes: runNotes})
     .then(() => {
         history.push('/homepage');
         //edit later to be summary page
@@ -48,7 +55,7 @@ function AddRunPage() {
           <input value={runDistance} onChange={(event) => setRunDistance(event.target.value)} type="number"/>
         </div>
         <div>
-          <label for="duration">Duration (HH:MM:SS):</label> 
+          <label for="duration">Duration (min):</label> 
           <input value={runDuration} onChange={(event) => setRunDuration(event.target.value)} type="number"/>
         </div>
         <div>
