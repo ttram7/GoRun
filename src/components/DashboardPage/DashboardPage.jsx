@@ -40,15 +40,10 @@ function DashboardPage () {
   const deleteRun = (id) => {
     console.log('in deleteRun')
     if (confirm("Are you sure you want to delete this run?")) {
-      axios.delete(`/api/runs/${id}`)
-        .then(response => {
-          console.log('successful delete', response)
-          fetchRuns();
-        }).catch(err => {
-          console.log('error with making delete', err)
-    });
+      dispatch({type: 'DELETE_RUN', payload: id});
+    };
     }
-}
+
 
   return (
     <div className="container">

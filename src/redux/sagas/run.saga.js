@@ -39,9 +39,24 @@ function* addRun(action) {
   }
 }
 
+function* deleteRun(action) {
+  try {
+    const config = {
+      headers: { 'Content-Type': 'application/json' },
+      withCredentials: true,
+    };
+    const response = yield axios.delete(`/api/runs/${action.payload}`, config);
+    yield put({ type: 'FETCH_RUN_LIST'});
+  } catch (error) {
+    console.log('Delete run failed', error);
+    alert('Something went wrong');
+  }
+}
+
 function* runSaga() {
   yield takeLatest('FETCH_RUN_LIST', fetchRuns);
   yield takeLatest('ADD_RUN', addRun);
+  yield takeLatest('DELETE_RUN', deleteRun);
 }
 
 export default runSaga;
