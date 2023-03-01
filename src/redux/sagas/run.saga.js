@@ -25,8 +25,18 @@ function* fetchRuns() {
   }
 }
 
-function* addRun() {
-
+function* addRun(action) {
+  try {
+    const config = {
+      headers: { 'Content-Type': 'application/json' },
+      withCredentials: true,
+    };
+    const response = yield axios.post('/api/runs', action.payload, config);
+    yield put({ type: 'FETCH_RUN_LIST'});
+  } catch (error) {
+    console.log('Add run failed', error);
+    alert('Something went wrong');
+  }
 }
 
 function* runSaga() {

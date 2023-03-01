@@ -8,7 +8,7 @@ function AddRunPage() {
   //const store = useSelector((store) => store);
   const history = useHistory();
   const dispatch = useDispatch();
-  
+
   const [runName, setRunName] = useState('');
   const [runDate, setRunDate] = useState('');
   const [runTime, setRunTime] = useState('');
@@ -19,21 +19,31 @@ function AddRunPage() {
 
   const addNewRun = (event) => {
     event.preventDefault();
-    axios.post('/api/runs', 
+    
+    dispatch({type: 'ADD_RUN', payload: 
       {name: runName,
       date: runDate,
       time: runTime,
       distance: runDistance,
       duration: runDuration,
       difficulty: runDifficulty,
-      notes: runNotes})
-    .then(() => {
-        history.push('/dashboard');
-        //edit later to be summary page
-    }).catch((error) => {
-        console.log(error);
-        alert('Something went wrong')
-    })
+      notes: runNotes}});
+    // axios.post('/api/runs', 
+    //   {name: runName,
+    //   date: runDate,
+    //   time: runTime,
+    //   distance: runDistance,
+    //   duration: runDuration,
+    //   difficulty: runDifficulty,
+    //   notes: runNotes})
+    // .then(() => {
+    //     history.push('/dashboard');
+    //     //edit later to be summary page
+    // }).catch((error) => {
+    //     console.log(error);
+    //     alert('Something went wrong')
+    // })
+    history.push('/dashboard');
   }
 
   return (
