@@ -8,10 +8,10 @@ import './DashboardPage.css'
 
 
 function DashboardPage () {
-  // add-in
-  const [runList, setRunList] = useState([]);
+  const runList = useSelector(store => store.runList);
+  //const [runList, setRunList] = useState([]);
   const dispatch = useDispatch();
-  const runs = useSelector(store => store.runs);
+  
   const history = useHistory();
 
   useEffect(() => {
@@ -20,13 +20,15 @@ function DashboardPage () {
     }, []);
 
   const fetchRuns = () => {
-    axios.get('api/runs')
-      .then((response) => {
-        setRunList(response.data);
-      }).catch(error => {
-        console.log('ERROR: Get all runs', error);
-        alert('Something is wrong');
-      });
+    dispatch({type: 'FETCH_RUN_LIST'});
+    // axios.get('api/runs')
+    //   .then((response) => {
+    //     dispatch({type: 'SET_RUN_LIST', payload: response})
+    //     //setRunList(response.data);
+    //   }).catch(error => {
+    //     console.log('ERROR: Get all runs', error);
+    //     alert('Something is wrong');
+    //   });
   }
 
   const editRun = () => {

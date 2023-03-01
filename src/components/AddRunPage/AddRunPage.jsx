@@ -1,12 +1,14 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import {useSelector} from 'react-redux';
+import { useDispatch, useSelector} from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 
 function AddRunPage() {
   //const store = useSelector((store) => store);
   const history = useHistory();
+  const dispatch = useDispatch();
+  
   const [runName, setRunName] = useState('');
   const [runDate, setRunDate] = useState('');
   const [runTime, setRunTime] = useState('');
