@@ -38,14 +38,13 @@ function DashboardPage () {
   const deleteRun = (id) => {
     console.log('in deleteRun')
     if (confirm("Are you sure you want to delete this run?")) {
-      alert('Delete successful!')
-    //   axios.delete(`/api/runs/${id}`)
-    //     .then(response => {
-    //       console.log('successful delete', response)
-    //       fetchRuns();
-    //     }).catch(err => {
-    //       console.log('error with making delete', err)
-    // });
+      axios.delete(`/api/runs/${id}`)
+        .then(response => {
+          console.log('successful delete', response)
+          fetchRuns();
+        }).catch(err => {
+          console.log('error with making delete', err)
+    });
     }
 }
 
@@ -56,7 +55,7 @@ function DashboardPage () {
         {runList.map(run => {
           return (
             <div className="indv-run" key={run.id}>
-              {run.date}
+              {new Date(run.date).toLocaleDateString('en-US')}
               <br/>
               {run.name}
               <br/>

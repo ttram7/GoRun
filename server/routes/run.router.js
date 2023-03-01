@@ -49,7 +49,7 @@ router.post('/', (req, res) => {
 router.delete('/:id', (req, res) => {
   if (req.isAuthenticated()) {
     const query = `DELETE FROM "runs" WHERE "id" = $1 AND "user_id" = $2`;
-    pool.query(query, [req.paramsms.id, req.user.id])
+    pool.query(query, [req.params.id, req.user.id])
       .then(() => {
         res.sendStatus(201);
       })
