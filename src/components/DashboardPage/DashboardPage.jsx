@@ -3,34 +3,21 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import {useDispatch, useSelector} from 'react-redux';
 import { useEffect, useState} from 'react';
 import { useHistory } from 'react-router-dom';
-import axios from 'axios';
 import './DashboardPage.css'
 
-
+// displays recent activity
 function DashboardPage () {
   const runList = useSelector(store => store.runList);
-  //const [runList, setRunList] = useState([]);
   const dispatch = useDispatch();
-  
   const history = useHistory();
 
+  // shows most recent run data on page load
   useEffect(() => {
-    //dispatch({ type: 'FETCH_RUNS' });
-    fetchRuns();
+    dispatch({type: 'FETCH_RUN_LIST'});
     }, []);
 
-  const fetchRuns = () => {
-    dispatch({type: 'FETCH_RUN_LIST'});
-    // axios.get('api/runs')
-    //   .then((response) => {
-    //     dispatch({type: 'SET_RUN_LIST', payload: response})
-    //     //setRunList(response.data);
-    //   }).catch(error => {
-    //     console.log('ERROR: Get all runs', error);
-    //     alert('Something is wrong');
-    //   });
-  }
-
+  // sends run that's being edited to editReducer
+  // navigates user to EditPage
   const editRun = (run) => {
     // dispatch data to reducer
     console.log('in editRun:', run);
@@ -38,7 +25,9 @@ function DashboardPage () {
     history.push('/edit-run');
   }
 
-
+  // displays alert message asking if user wants to delete run
+  // if click 'cancel' run won't be deleted
+  // if click 'ok', run will be deleted from their data
   const deleteRun = (id) => {
     console.log('in deleteRun')
     if (confirm("Are you sure you want to delete this run?")) {
@@ -46,7 +35,8 @@ function DashboardPage () {
     };
     }
 
-
+  // displays most recent runs in runList
+  // each run has an 'edit' and 'delete' btn
   return (
     <div className="container">
       <h2>Dashboard</h2>

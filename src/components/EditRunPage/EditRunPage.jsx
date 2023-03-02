@@ -10,27 +10,33 @@ function EditRunPage() {
 
   const [editRunName, setEditRunName] = useState(editRun.name)
   const [editRunDate, setEditRunDate] = useState(editRun.date);
-  const [editRunTime, setEditRunTime] = useState(editRun.time);
-  const [editRunDistance, setEditRunDistance] = useState(editRun.distance);
-  const [editRunDuration, setEditRunDuration] = useState(editRun.duration);
-  const [editRunDifficulty, setEditRunDifficulty] = useState(editRun.difficulty);
-  const [editRunNotes, setEditRunNotes] = useState(editRun.notes);
+  // const [editRunTime, setEditRunTime] = useState(editRun.time);
+  // const [editRunDistance, setEditRunDistance] = useState(editRun.distance);
+  // const [editRunDuration, setEditRunDuration] = useState(editRun.duration);
+  // const [editRunDifficulty, setEditRunDifficulty] = useState(editRun.difficulty);
+  // const [editRunNotes, setEditRunNotes] = useState(editRun.notes);
+
+  const [state, setState] = useState()
 
   const id = editRun.id;
   console.log(id);
 
-  const handleSubmit = (id) => {
-    const updateRun =
-      {name: editRunName,
-      date: editRunDate,
-      time: editRunTime,
-      distance: editRunDistance,
-      duration: editRunDuration,
-      difficulty: editRunDifficulty,
-      notes: editRunNotes}
-    console.log(updateRun, id)
+  // const handleOnChange = (event) => {
+  //   dispatch({type: 'EDIT_ONCHANGE', payload: {property: 'name', value: event.target.value}})
+  // }
+
+  const handleSubmit = (event) => {
+    // const updateRun =
+    //   {name: editRunName,
+    //   date: editRunDate,
+    //   time: editRunTime,
+    //   distance: editRunDistance,
+    //   duration: editRunDuration,
+    //   difficulty: editRunDifficulty,
+    //   notes: editRunNotes}
+    console.log(editRunName, editRunDate, id)
     dispatch({type:'UPDATE_RUN', payload:
-      updateRun, id});
+      {name: editRunName, id, history}});
     history.push('/dashboard');
   }
 
@@ -47,14 +53,23 @@ function EditRunPage() {
               {editRun.duration}:00
     </div>
     <form onSubmit={handleSubmit}>
+        {/* <div>
+          <label htmlFor="name">Name:</label> 
+          <input name="name"value={editRun.name} onChange={(event) => handleOnChange(event)} type="text"/>
+        </div> */}
         <div>
           <label for="name">Name:</label> 
           <input value={editRunName} onChange={(event) => setEditRunName(event.target.value)} type="text"/>
         </div>
+        {/* <div>
+          <label htmlFor="date">Date:</label> 
+          <input name="date" value={editRun.date} onChange={(event) => handleOnChange(event)} type="date"/>
+        </div> */}
         <div>
           <label for="date">Date:</label> 
           <input value={editRunDate} onChange={(event) => setEditRunDate(event.target.value)} type="date"/>
         </div>
+        {/*}
         <div>
           <label for="time">Time:</label> 
           <input value={editRunTime} onChange={(event) => setEditRunTime(event.target.value)} type="time"/>
@@ -68,16 +83,15 @@ function EditRunPage() {
           <input value={editRunDuration} onChange={(event) => setEditRunDuration(event.target.value)} type="number"/>
         </div>
         <div>
-          {/* dynamic slider */}
-          <label for="difficulty">Difficulty:</label> 
+          {/* <label for="difficulty">Difficulty:</label> 
           <input value={editRunDifficulty} onChange={(event) => setEditRunDifficulty(event.target.value)} type="range" min="1" max="10"/>
           {editRunDifficulty}
         </div>
         <div>
           <label for="notes">Notes (optional):</label> 
           <input value={editRunNotes} onChange={(event) => setEditRunNotes(event.target.value)} type="text"/>
-        </div> 
-        <input type="submit"/>
+      </div> */}
+        <input type="submit"/> 
       </form>
     </div>
   );
