@@ -53,10 +53,27 @@ function* deleteRun(action) {
   }
 }
 
+function* updateRun(action) {
+  // try {
+  //   const config = {
+  //     headers: { 'Content-Type': 'application/json' },
+  //     withCredentials: true,
+  //   };
+    console.log('in updateRun', action.payload, action.payload.id)
+  //   const response = yield axios.put(`/api/runs/${action.payload.id}`, action.payload, config);
+  //   //yield put({ type: 'FETCH_EDIT_RUN'});
+  // } catch (error) {
+  //   console.log('Set edit run failed', error);
+  //   alert('Something went wrong');
+  // }
+}
+
+
 function* runSaga() {
   yield takeLatest('FETCH_RUN_LIST', fetchRuns);
   yield takeLatest('ADD_RUN', addRun);
   yield takeLatest('DELETE_RUN', deleteRun);
+  yield takeLatest('UPDATE_RUN', updateRun);
 }
 
 export default runSaga;

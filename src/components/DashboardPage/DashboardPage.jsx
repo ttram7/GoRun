@@ -31,8 +31,10 @@ function DashboardPage () {
     //   });
   }
 
-  const editRun = () => {
-    // get data from reducer
+  const editRun = (run) => {
+    // dispatch data to reducer
+    console.log('in editRun:', run);
+    dispatch({type: 'SET_EDIT_RUN', payload: run})
     history.push('/edit-run');
   }
 
@@ -60,7 +62,7 @@ function DashboardPage () {
               <br/>
               {run.duration}:00
               <button className="indv-run-btn" onClick={() => deleteRun(run.id)}>Delete</button>
-              <button className="indv-run-btn" onClick={() => editRun(run.id)}>Edit</button>
+              <button className="indv-run-btn" onClick={() => editRun(run)}>Edit</button>
             </div>
           );
         })}

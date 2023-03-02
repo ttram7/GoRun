@@ -62,4 +62,23 @@ router.delete('/:id', (req, res) => {
   }
 })
 
+router.put('/:id', (req, res) => {
+  console.log('in put route')
+  console.log(req.body, req.body.id)
+  // if (req.isAuthenticated()) {
+  //   const query = `UPDATE "runs" SET ("name" = $1, "date" = $2, "time", "distance", "duration", "difficulty", "notes", "user_id")
+  //   VALUES ($1, $2, $3, $4, $5, $6, $7, $8)`WHERE "id" = $1 AND "user_id" = $2`;`
+  //   pool.query(query, [req.params.id, req.user.id])
+  //     .then(() => {
+  //       res.sendStatus(201);
+  //     })
+  //     .catch(err => {
+  //       console.log('ERROR: Deleting run', err);
+  //       res.sendStatus(500)
+  //     })
+  // } else {
+  //   res.sendStatus(403);
+  // }
+})
+
 module.exports = router;
