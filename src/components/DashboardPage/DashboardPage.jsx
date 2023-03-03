@@ -43,12 +43,12 @@ function DashboardPage () {
       <div className="run-list">
         {runList.map(run => {
           return (
-            <div className="indv-run" key={run.id}>
+            <div className="indv-run-block" key={run.id}>
               {new Date(run.date).toLocaleDateString('en-US')}
               <br/>
               {run.name}
               <br/>
-              {run.distance} miles
+              {run.distance} mi.
               <br/>
               {run.duration}:00
               <button className="indv-run-btn" onClick={() => deleteRun(run.id)}>Delete</button>

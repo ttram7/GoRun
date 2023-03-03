@@ -48,7 +48,7 @@ function EditRunPage() {
               <br/>
               {editRun.name}
               <br/>
-              {editRun.distance} miles
+              {editRun.distance} mi.
               <br/>
               {editRun.duration}:00
     </div>
