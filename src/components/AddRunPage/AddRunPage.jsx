@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector} from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-
 function AddRunPage() {
   const history = useHistory();
   const dispatch = useDispatch();
@@ -15,6 +14,8 @@ function AddRunPage() {
   const [runDifficulty, setRunDifficulty] = useState('');
   const [runNotes, setRunNotes] = useState('');
 
+  // dispatch user inputs to post saga
+  // when post request complete, navigate user to DashboardPage 
   const addNewRun = (event) => {
     event.preventDefault();
     

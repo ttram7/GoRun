@@ -25,14 +25,7 @@ function EditRunPage() {
   // }
 
   const handleSubmit = (event) => {
-    // const updateRun =
-    //   {name: editRunName,
-    //   date: editRunDate,
-    //   time: editRunTime,
-    //   distance: editRunDistance,
-    //   duration: editRunDuration,
-    //   difficulty: editRunDifficulty,
-    //   notes: editRunNotes}
+    event.preventDefault();
     console.log(editRunName, editRunDate, id)
     dispatch({type:'UPDATE_RUN', payload:
       {name: editRunName,  
@@ -45,7 +38,8 @@ function EditRunPage() {
       id, user_id}});
     history.push('/dashboard');
   }
-
+  // display run before edits
+  // display inputs already populated with info
   return (
     <div>
       <h2>Edit Run</h2>
