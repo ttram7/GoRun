@@ -1,26 +1,25 @@
 const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
+const axios = require('axios');
 
 // /**
 //  * GET route template
 //  */
-// router.get('/', (req, res) => {
-//   // GET route code here
+router.get('/', (req, res) => {
 //   if (req.isAuthenticated()) {
-//     const query = `SELECT * FROM runs WHERE "user_id" = $1 ORDER BY "date" DESC`;
-//     pool.query(query, [req.user.id])
-//       .then( result => {
-//         res.send(result.rows);
-//       })
-//       .catch(err => {
-//         console.log('ERROR: Get all runs', err);
-//         res.sendStatus(500)
-//       })
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=Minneapolis&appid=${process.env.OPEN_WEATHER_API_KEY}`)
+    .then((response) => {
+        res.send(response.data)
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+
 //   } else {
 //     res.sendStatus(403);
 //   }
-// });
+});
 
 
 // /**
