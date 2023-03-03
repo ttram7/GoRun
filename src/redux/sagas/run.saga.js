@@ -60,12 +60,12 @@ function* updateRun(action) {
       withCredentials: true,
     };
     console.log('in updateRun', action.payload, action.payload.id)
-    const response = yield axios.put(`/api/runs/${action.payload.id}`, action.payload, config);
-    //if (action.history) {
+    const response = yield axios.put(`/api/runs/${action.payload.id}`, action.payload, config)
       console.log('put request success');
+      //if (action.history) {
       //action.history.push('/dashboard');
     //}
-    //yield put({ type: 'FETCH_EDIT_RUN'});
+    yield put({ type: 'FETCH_RUN_LIST'});
   } catch (error) {
     console.log('Set edit run failed', error);
     alert('Something went wrong');

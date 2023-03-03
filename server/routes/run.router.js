@@ -66,14 +66,15 @@ router.put('/:id', (req, res) => {
   console.log('in put route')
   console.log(req.body, req.body.id)
   if (req.isAuthenticated()) {
-    const query = `UPDATE "runs" SET "name" = $1
-    WHERE "id" = $2 AND "user_id" = $3`;
-    pool.query(query, [req.body.name, req.body.id, req.user.id])
+    const query = `UPDATE "runs" SET "name" = $1, "date" = $2, "time" = $3, "distance" = $4, 
+    "duration" = $5, "difficulty" = $6, "notes" = $7
+    WHERE "id" = $8 AND "user_id" = $9`;
+    pool.query(query, [req.body.name, req.body.date, req.body.time, req.body.distance, req.body.duration, req.body.difficulty, req.body.notes, req.body.id, req.user.id])
       .then((result) => {
         res.sendStatus(201);
       })
       .catch(err => {
-        console.log('ERROR: Deleting run', err);
+        console.log('ERROR: updating run', err);
         res.sendStatus(500)
       })
   } else {
