@@ -8,9 +8,10 @@ function Nav() {
   const user = useSelector((store) => store.user);
 
   return (
-    <div className="nav">
+    <>
+    <div className="top-nav">
       <Link to="/dashboard">
-        <h2 className="nav-title">Go Run</h2>
+        <h2 className="top-nav-title">Go Run</h2>
       </Link>
       <div>
         {/* If no user is logged in, show these links */}
@@ -45,6 +46,12 @@ function Nav() {
         </Link>
       </div>
     </div>
+    <div className="bottom-nav">
+      <Link className="navLink" to="/dashboard">
+        Home
+      </Link>
+    </div>
+    </>
   );
 }
 
