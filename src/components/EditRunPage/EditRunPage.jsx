@@ -9,7 +9,7 @@ function EditRunPage() {
   
 
   const [editRunName, setEditRunName] = useState(editRun.name)
-  const [editRunDate, setEditRunDate] = useState(editRun.date);
+  const [editRunDate, setEditRunDate] = useState((editRun.date).slice(0,10));
   const [editRunTime, setEditRunTime] = useState(editRun.time);
   const [editRunDistance, setEditRunDistance] = useState(editRun.distance);
   const [editRunDuration, setEditRunDuration] = useState(editRun.duration);
@@ -18,7 +18,8 @@ function EditRunPage() {
 
   const id = editRun.id;
   const user_id = editRun.user_id;
-  //console.log(id);
+  // console.log(editRun.date);
+  // console.log((editRun.date).slice(0,10));
 
   // const handleOnChange = (event) => {
   //   dispatch({type: 'EDIT_ONCHANGE', payload: {property: 'name', value: event.target.value}})
@@ -26,7 +27,7 @@ function EditRunPage() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(editRunName, editRunDate, id)
+    //console.log(editRunName, editRunDate, id)
     dispatch({type:'UPDATE_RUN', payload:
       {name: editRunName,  
       date: editRunDate,
