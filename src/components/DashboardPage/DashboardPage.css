@@ -19,5 +19,16 @@
 }
 
 .run-list {
+    /* weather
+    display: flex;
+    justify-content: center; */
+    /* display: flex;  */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    width: 350px;
+    /* margin-right: 0%; */
+    margin-left: auto;
+    margin-right: auto;
     
 }
+

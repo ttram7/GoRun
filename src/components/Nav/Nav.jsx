@@ -1,8 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import LogOutButton from '../LogOutButton/LogOutButton';
+import BottomNav from '../BottomNav/BottomNav';
 import './Nav.css';
 import { useSelector } from 'react-redux';
+
+// import { BottomNavigation, BottomNavigationAction } from '@mui/material';
+// import AddIcon from '@mui/icons-material/Add';
 
 function Nav() {
   const user = useSelector((store) => store.user);
@@ -47,9 +51,13 @@ function Nav() {
       </div>
     </div>
     <div className="bottom-nav">
-      <Link className="navLink" to="/dashboard">
+      {/* <Link className="navLink" to="/dashboard">
         Home
-      </Link>
+      </Link> */}
+      <BottomNav/>
+      {/* <BottomNavigation sx={{width:'100%'}}>
+            <BottomNavigationAction label="Add" icon={<AddIcon />} />
+        </BottomNavigation> */}
     </div>
     </>
   );
