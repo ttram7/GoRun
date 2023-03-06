@@ -38,7 +38,7 @@ function DashboardPage () {
   // displays most recent runs in runList
   // each run has an 'edit' and 'delete' btn
   return (
-    <div className="container">
+    <div className="dashboard-container">
       <h2>Dashboard</h2>
       <div className="run-list">
         {runList.map(run => {
