@@ -17,7 +17,9 @@ function BottomNav() {
                 <BottomNavigationAction label="Add" icon={<AddIcon />} />
             </Link>
             <BottomNavigationAction label="Progress" icon={<LeaderboardIcon />} />
-            <BottomNavigationAction label="Account" icon={<AccountCircleIcon />} />
+            <Link className='bottom-nav-icon' to="/about">
+                <BottomNavigationAction label="Account" icon={<AccountCircleIcon />} />
+            </Link>
         </BottomNavigation>
        
     )
