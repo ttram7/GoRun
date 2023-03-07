@@ -1,34 +1,34 @@
+.difficulty-image {
+    width: 50px;
+}
+
 .indv-run-block {
-    border-style: solid;
-    border-width: 1px;
+    /* border-style: solid;
+    border-width: 1px; */
+    border-radius: 10px;
     height: 100px;
     width: 328px;
     padding: 10px;
-    margin-bottom: 10px;
-    /* margin-left: 10px;
-    margin-right: 10px; */
+    margin-bottom: 20px;
+    background-color: white;
+    /* display: flex; */
+    
 }
-/* .indv-run-text {
-    height: 100px;
-    width: 348px;
-    margin: 3px;
-} */
 
 .indv-run-btn {
     float: right;
 }
 
+.indv-run-text {
+    /* text-align: center; */
+}
+
 .run-list {
-    /* weather
-    display: flex;
-    justify-content: center; */
-    /* display: flex;  */
-    /* flex-direction: column; */
-    /* justify-content: center; */
     width: 350px;
-    /* margin-right: 0%; */
     margin-left: auto;
     margin-right: auto;
+    padding: 10px;
+    background-color: #eeeeee;
     
 }
 
