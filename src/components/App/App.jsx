@@ -22,6 +22,7 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import DashboardPage from '../DashboardPage/DashboardPage';
 import AddRunPage from '../AddRunPage/AddRunPage';
 import EditRunPage from '../EditRunPage/EditRunPage';
+import ProgressPage from '../ProgressPage/ProgressPage';
 
 import './App.css';
 
@@ -82,6 +83,14 @@ function App() {
             path="/info"
           >
             <InfoPage />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows ProgressPage else shows LoginPage
+            exact
+            path="/stats"
+          >
+            <ProgressPage />
           </ProtectedRoute>
 
           <Route
