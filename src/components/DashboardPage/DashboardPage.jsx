@@ -41,16 +41,22 @@ function DashboardPage () {
     <div className="dashboard-container">
       <h2>Dashboard</h2>
       <div className="run-list">
+        <h3>Recent Activity</h3>
         {runList.map(run => {
           return (
             <div className="indv-run-block" key={run.id}>
-              {new Date(run.date).toLocaleDateString('en-US')}
-              <br/>
-              {run.name}
-              <br/>
-              {run.distance} mi.
-              <br/>
-              {run.duration}:00
+              {/* <div className='difficulty-image'>
+                <p>Image</p>
+              </div> */}
+              <div className='indv-run-text'>
+                {run.name}
+                <br/>
+                {new Date(run.date).toLocaleDateString('en-US')}
+                <br/>
+                {run.distance} mi.
+                <br/>
+                {run.duration}:00
+              </div>
               <button className="indv-run-btn" onClick={() => deleteRun(run.id)}>Delete</button>
               <button className="indv-run-btn" onClick={() => editRun(run)}>Edit</button>
             </div>
