@@ -45,20 +45,20 @@ function DashboardPage () {
         {runList.map(run => {
           return (
             <div className="indv-run-block" key={run.id}>
-              {/* <div className='difficulty-image'>
+              <div className='inner-block'>
+              <div className='difficulty-image'>
                 <p>Image</p>
-              </div> */}
-              <div className='indv-run-text'>
-                {run.name}
-                <br/>
-                {new Date(run.date).toLocaleDateString('en-US')}
-                <br/>
-                {run.distance} mi.
-                <br/>
-                {run.duration}:00
               </div>
-              <button className="indv-run-btn" onClick={() => deleteRun(run.id)}>Delete</button>
-              <button className="indv-run-btn" onClick={() => editRun(run)}>Edit</button>
+              <div className='inner-text'>
+                <p>{run.name}    {new Date(run.date).toLocaleDateString('en-US')}</p>
+                {/* <br/> */}
+                <p>{run.distance} mi.   {run.duration}:00</p>
+              </div>
+              </div>
+              <div className='inner-btns'>
+                <button className="indv-run-btn" onClick={() => deleteRun(run.id)}>Delete</button>
+                <button className="indv-run-btn" onClick={() => editRun(run)}>Edit</button>
+              </div>
             </div>
           );
         })}

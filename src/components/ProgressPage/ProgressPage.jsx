@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {useSelector} from 'react-redux';
+import StatsGraph from '../StatsGraph/StatsGraph';
 
 function ProgressPage() {
   //const store = useSelector((store) => store);
@@ -8,6 +9,7 @@ function ProgressPage() {
   return (
     <div>
       <h2>Progress Page</h2>
+      <StatsGraph />
     </div>
   );
 }

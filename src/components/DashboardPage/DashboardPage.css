@@ -2,6 +2,8 @@
     width: 50px;
 }
 
+
+
 .indv-run-block {
     /* border-style: solid;
     border-width: 1px; */
@@ -19,8 +21,13 @@
     float: right;
 }
 
-.indv-run-text {
+.inner-block {
+    display: flex;
+}
+
+.inner-text {
     /* text-align: center; */
+    /* display: flex; */
 }
 
 .run-list {
