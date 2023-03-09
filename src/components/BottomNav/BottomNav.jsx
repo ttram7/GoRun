@@ -11,13 +11,13 @@ function BottomNav() {
     return(
         <BottomNavigation sx={{width:'100%'}}>
             <Link className='bottom-nav-icon' to="/dashboard">
-                <BottomNavigationAction label="Home" icon={<HomeIcon />} />
+                <BottomNavigationAction label="Home" icon={<HomeIcon color="primary"/>} />
             </Link>
             <Link className='bottom-nav-icon' to="/add-run">
-                <BottomNavigationAction label="Add" icon={<AddIcon />} />
+                <BottomNavigationAction label="Add" icon={<AddIcon color="primary"/>} />
             </Link>
-            <BottomNavigationAction label="Progress" icon={<LeaderboardIcon />} />
-            <BottomNavigationAction label="Account" icon={<AccountCircleIcon />} />
+            <BottomNavigationAction label="Progress" icon={<LeaderboardIcon color="primary"/>} />
+            <BottomNavigationAction label="Account" icon={<AccountCircleIcon color="primary"/>} />
         </BottomNavigation>
        
     )
