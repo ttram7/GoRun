@@ -8,7 +8,8 @@ const router = express.Router();
 router.get('/', (req, res) => {
   // GET route code here
   if (req.isAuthenticated()) {
-    const query = `SELECT * FROM runs WHERE "user_id" = $1 ORDER BY "date" DESC`;
+    //const query = `SELECT * FROM runs WHERE "user_id" = $1 ORDER BY "date" DESC`;
+    const query = `SELECT * FROM "runs" WHERE EXTRACT (WEEK FROM "date") = EXTRACT (WEEK FROM NOW()) AND "user_id" = $1 ORDER BY "date" DESC`;
     pool.query(query, [req.user.id])
       .then( result => {
         res.send(result.rows);
