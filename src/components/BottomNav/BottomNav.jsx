@@ -16,8 +16,12 @@ function BottomNav() {
             <Link className='bottom-nav-icon' to="/add-run">
                 <BottomNavigationAction label="Add" icon={<AddIcon color="primary"/>} />
             </Link>
-            <BottomNavigationAction label="Progress" icon={<LeaderboardIcon color="primary"/>} />
-            <BottomNavigationAction label="Account" icon={<AccountCircleIcon color="primary"/>} />
+            <Link className='bottom-nav-icon' to="/stats">
+                <BottomNavigationAction label="Progress" icon={<LeaderboardIcon color="primary"/>} />
+            </Link>
+            <Link className='bottom-nav-icon' to="/about">
+                <BottomNavigationAction label="Account" icon={<AccountCircleIcon color="primary"/>} />
+            </Link>
         </BottomNavigation>
        
     )
