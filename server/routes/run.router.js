@@ -29,8 +29,8 @@ router.get('/', (req, res) => {
  */
 router.post('/', (req, res) => {
   // POST route code here
-  console.log('/runs POST route');
-  console.log(req.body);
+ // console.log('/runs POST route');
+  //console.log(req.body);
   if (req.isAuthenticated()) {
     const query = `INSERT INTO "runs" ("name", "date", "time", "distance", "duration", "difficulty", "notes", "user_id")
                   VALUES ($1, $2, $3, $4, $5, $6, $7, $8)`;

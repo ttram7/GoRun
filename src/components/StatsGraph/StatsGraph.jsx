@@ -24,6 +24,7 @@ import {
 function StatsGraph() {
   const runList = useSelector(store => store.runList);
   const [weeklyRunList, setWeeklyRunList] = useState([]);
+  let dataList = [];
 
   const [chartData, setChartData] = useState({
     datasets: [],
@@ -41,8 +42,6 @@ function StatsGraph() {
     .then((response) => {
       console.log('response from week stats', response.data);
       setGraph(response.data);
-      //setWeeklyRunList(response.data);
-      //setChartData(response.data);
       console.log('weekList', response.data)
     })
     .catch((error) => {
@@ -52,18 +51,35 @@ function StatsGraph() {
 
  const setGraph = (weeklyRunList) => {
     console.log('weeklyRunList', weeklyRunList)
-    const distanceList = weeklyRunList.map((run) => run.distance)
-    console.log('distanceList', distanceList) // output: [3, 3, 2]
-
-
+    const dowList = ['M', 'T', 'W', 'TH', 'F', 'SA', 'SU']
     
+    let i = 0;
+    let j = 0;
+    while (i < dowList.length) {
+      while (j < weeklyRunList.length) {
+          if (dowList[i] === weeklyRunList[j].dow_name) {
+            dataList.push(weeklyRunList[j].distance)
+            j++;
+          }
+          else {
+            dataList.push(0)
+          }
+      i++;
+      }
+  }
+    
+    console.log('testList: ',dataList)
+
+
+
+
     setChartData({
-        labels:['M', 'T', 'W', 'TH', 'F', 'S', 'S'],
+        labels:['M', 'T', 'W', 'TH', 'F', 'SA', 'SU'],
         datasets: [
           {
             label: 'Distance',
-            data: weeklyRunList.map((run) => run.distance),
-            //data: chartData.map(run => run.distance),
+            //data: weeklyRunList.map((run) => run.distance),
+            data: dataList,
             borderColor: 'rgb(255, 99, 132)',
             backgroundColor: '#3395ef',
           }
@@ -84,16 +100,13 @@ function StatsGraph() {
 }
  
 return (
-  <>
-      {/* {weeklyRunList.length > 0 && */}
       <div>
         <h3>Stats Graph</h3>
         <div className="bar-chart">
           <Bar options={chartOptions} data={chartData}/>
         </div>
       </div>
-    {/* } */}
-    </>
+   
     );
 
 }
