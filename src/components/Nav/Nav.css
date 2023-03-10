@@ -14,10 +14,10 @@
 }
 
 .top-nav-title {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 700;
   color: #f2f2f2;
-  padding-left: 10px;
+  padding-left: 15px;
   margin: 0;
 }
 
@@ -42,10 +42,10 @@
   background-color: #008183;
 }
 
-.bottom-nav {
+/* .bottom-nav {
   overflow: hidden;
   background-color: #00acb0;
   position: fixed;
   bottom: 0;
   width: 100%;
-}
+} */

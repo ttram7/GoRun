@@ -2,3 +2,10 @@
 display: flex;
   justify-content: space-evenly;
 } */
+.bottom-nav {
+  overflow: hidden;
+  background-color: #00acb0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

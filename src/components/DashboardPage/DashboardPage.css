@@ -19,7 +19,13 @@ Button
     width: 50px;
 }
 
+h2 {
+    padding: 15px;
+}
 
+h3 {
+    padding: 15px; 
+}
 
 .indv-run-block {
     /* border-style: solid;

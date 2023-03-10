@@ -4,6 +4,10 @@ import {useDispatch, useSelector} from 'react-redux';
 import { useEffect, useState} from 'react';
 import { useHistory } from 'react-router-dom';
 import './DashboardPage.css'
+import BottomNav from '../BottomNav/BottomNav';
+import WhatshotIcon from '@mui/icons-material/Whatshot';
+import swal from 'sweetalert';
+
 
 // displays recent activity
 function DashboardPage () {
@@ -30,10 +34,28 @@ function DashboardPage () {
   // if click 'ok', run will be deleted from their data
   const deleteRun = (id) => {
     console.log('in deleteRun')
-    if (confirm("Are you sure you want to delete this run?")) {
-      dispatch({type: 'DELETE_RUN', payload: id});
-    };
+    // if (confirm("Are you sure you want to delete this run?")) {
+    //   dispatch({type: 'DELETE_RUN', payload: id});
+    // };
+    swal({
+      title: "",
+      text: "Are you sure you want to delete this run?",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        dispatch({type: 'DELETE_RUN', payload: id});
+      } else {
+          return;
+      }
+    });
     }
+
+  const difficultyColor = () => {
+  
+  }
 
   // displays most recent runs in runList
   // each run has an 'edit' and 'delete' btn
@@ -47,6 +69,7 @@ function DashboardPage () {
             <div className="indv-run-block" key={run.id}>
               <div className='inner-block'>
               <div className='difficulty-image'>
+                {/* {run.difficulty >=1 && run.difficulty < 5 : <WhatshotIcon/> ? 'none'} */}
                 <p>Image</p>
               </div>
               <div className='inner-text'>
@@ -64,6 +87,7 @@ function DashboardPage () {
         })}
       </div>
       {/* <LogOutButton className="btn" /> */}
+      <BottomNav/>
     </div>
   );
 }

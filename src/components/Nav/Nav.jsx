@@ -54,7 +54,7 @@ function Nav() {
       {/* <Link className="navLink" to="/dashboard">
         Home
       </Link> */}
-      <BottomNav/>
+      {/* <BottomNav/> */}
       {/* <BottomNavigation sx={{width:'100%'}}>
             <BottomNavigationAction label="Add" icon={<AddIcon />} />
         </BottomNavigation> */}

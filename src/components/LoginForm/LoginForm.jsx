@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import {useSelector} from 'react-redux';
+import MUIButton from '../MUIButton/MUIButton';
 
 function LoginForm() {
   const [username, setUsername] = useState('');
@@ -58,6 +59,7 @@ function LoginForm() {
       </div>
       <div>
         <input className="btn" type="submit" name="submit" value="Log In" />
+        <MUIButton type="submit" name="submit" value="Log In" buttonVariant="contained" buttonColor="primary" buttonText="Log In" />
       </div>
     </form>
   );

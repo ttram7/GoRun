@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector} from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import './AddRunPage.css'
+import BottomNav from '../BottomNav/BottomNav';
 
 function AddRunPage() {
   const history = useHistory();
@@ -31,8 +33,10 @@ function AddRunPage() {
   }
 
   return (
-    <div>
-      <h2>Add Run</h2>
+    <>
+    <h2>Add Run</h2>
+      <div className='add-run-container'>
+      
       <form onSubmit={addNewRun}>
         <div>
           <label htmlFor="name">Name:</label> 
@@ -67,6 +71,8 @@ function AddRunPage() {
         <input type="submit"/>
       </form>
     </div>
+    <BottomNav/>
+    </>
   );
 }
 

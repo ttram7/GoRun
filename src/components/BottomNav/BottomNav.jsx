@@ -9,6 +9,7 @@ import './BottomNav.css'
 
 function BottomNav() {
     return(
+        <div className='bottom-nav'>
         <BottomNavigation sx={{width:'100%'}}>
             <Link className='bottom-nav-icon' to="/dashboard">
                 <BottomNavigationAction label="Home" icon={<HomeIcon color="primary"/>} />
@@ -23,6 +24,7 @@ function BottomNav() {
                 <BottomNavigationAction label="Account" icon={<AccountCircleIcon color="primary"/>} />
             </Link>
         </BottomNavigation>
+        </div>
        
     )
 }

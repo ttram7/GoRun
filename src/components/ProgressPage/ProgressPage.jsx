@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {useSelector} from 'react-redux';
+import BottomNav from '../BottomNav/BottomNav';
 import StatsGraph from '../StatsGraph/StatsGraph';
 
 function ProgressPage() {
@@ -10,6 +11,7 @@ function ProgressPage() {
     <div>
       <h2>Progress Page</h2>
       <StatsGraph />
+      <BottomNav />
     </div>
   );
 }

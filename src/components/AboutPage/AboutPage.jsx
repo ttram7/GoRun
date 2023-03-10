@@ -1,4 +1,6 @@
 import React from 'react';
+import LogOutButton from '../LogOutButton/LogOutButton';
+import BottomNav from '../BottomNav/BottomNav';
 
 // This is one of our simplest components
 // It doesn't have local state,
@@ -11,6 +13,10 @@ function AboutPage() {
       <div>
         <p>This about page is for anyone to read!</p>
       </div>
+      <div>
+      <LogOutButton className="navLink" />
+      </div>
+      <BottomNav />
     </div>
   );
 }

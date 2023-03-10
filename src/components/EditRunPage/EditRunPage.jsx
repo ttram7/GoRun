@@ -18,8 +18,8 @@ function EditRunPage() {
 
   const id = editRun.id;
   const user_id = editRun.user_id;
-  // console.log(editRun.date);
-  // console.log((editRun.date).slice(0,10));
+  console.log(editRun.date);
+  console.log((editRun.date).slice(0,10));
 
   // const handleOnChange = (event) => {
   //   dispatch({type: 'EDIT_ONCHANGE', payload: {property: 'name', value: event.target.value}})
