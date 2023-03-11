@@ -35,9 +35,9 @@ function AddRunPage() {
 
   const autoFill = () => {
     console.log('in autofill onclick function');
-    setRunName('Afternoon Jog');
+    setRunName('Easy Jog');
     setRunDate('2023-03-15');
-    setRunTime('03:00');
+    setRunTime('11:00');
     setRunDistance('2');
     setRunDuration('25');
     setRunDifficulty('3');

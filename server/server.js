@@ -29,7 +29,7 @@ app.use('/api/user', userRouter);
 // get run data
 app.use('/api/runs', runRouter);
 // get weekly runs
-app.use('/api/week-runs', statsRouter);
+app.use('/api/runs/weekly', runRouter);
 
 // Serve static files
 app.use(express.static('build'));

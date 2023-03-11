@@ -11,13 +11,13 @@ import swal from 'sweetalert';
 
 // displays recent activity
 function DashboardPage () {
-  const runList = useSelector(store => store.runList);
+  const runList = useSelector(store => store.recentActivityList);
   const dispatch = useDispatch();
   const history = useHistory();
 
   // shows most recent run data on page load
   useEffect(() => {
-    dispatch({type: 'FETCH_RUN_LIST'});
+    dispatch({type: 'FETCH_RECENT_ACTIVITY_LIST'});
     dispatch({type: 'FETCH_WEEKLY_RUN_LIST'});
     }, []);
 
@@ -51,9 +51,7 @@ function DashboardPage () {
     });
     }
 
-  const difficultyColor = () => {
   
-  }
 
   // displays most recent runs in runList
   // each run has an 'edit' and 'delete' btn
