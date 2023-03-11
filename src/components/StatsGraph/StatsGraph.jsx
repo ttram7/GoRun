@@ -22,32 +22,17 @@ import {
   );
 
 function StatsGraph() {
-  const runList = useSelector(store => store.runList);
-  const [weeklyRunList, setWeeklyRunList] = useState([]);
-  let dataList = [];
-
+  const weeklyRunList = useSelector(store => store.weeklyRunList);
   const [chartData, setChartData] = useState({
     datasets: [],
   })
-
   const [chartOptions, setChartOptions] = useState({});
+  const dispatch = useDispatch();
+  let dataList = [];
 
   useEffect(() => {
-    fetchWeeklyRuns();
+    setGraph(weeklyRunList)
   }, [])
-
-  const fetchWeeklyRuns = () => {
-    console.log('in fetch weekly runs')
-    axios.get('/api/week-runs')
-    .then((response) => {
-      console.log('response from week stats', response.data);
-      setGraph(response.data);
-      console.log('weekList', response.data)
-    })
-    .catch((error) => {
-      console.log("error getting week stats", error);
-    });
-  }
 
  const setGraph = (weeklyRunList) => {
     console.log('weeklyRunList', weeklyRunList)
@@ -98,17 +83,20 @@ function StatsGraph() {
         },
       });
 }
- 
+ console.log(weeklyRunList)
 return (
       <div>
         <h3>Stats Graph</h3>
         <div className="bar-chart">
           <Bar options={chartOptions} data={chartData}/>
         </div>
+        <div className='totalStats'>
+          <p>Total miles: </p>
+          <p>Total runs: </p>
+        </div>
       </div>
    
     );
-
 }
 
 export default StatsGraph;

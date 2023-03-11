@@ -18,6 +18,7 @@ function DashboardPage () {
   // shows most recent run data on page load
   useEffect(() => {
     dispatch({type: 'FETCH_RUN_LIST'});
+    dispatch({type: 'FETCH_WEEKLY_RUN_LIST'});
     }, []);
 
   // sends run that's being edited to editReducer

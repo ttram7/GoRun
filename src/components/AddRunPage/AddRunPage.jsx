@@ -34,14 +34,14 @@ function AddRunPage() {
   }
 
   const autoFill = () => {
-    console.log('in autofill onclick function')
-    setRunName('Afternoon Jog')
-    setRunDate('2023-03-15')
-    setRunTime('03:00')
-    setRunDistance('2')
-    setRunDuration('25')
-    setRunDifficulty('3')
-    setRunNotes('slippery outside')
+    console.log('in autofill onclick function');
+    setRunName('Afternoon Jog');
+    setRunDate('2023-03-15');
+    setRunTime('03:00');
+    setRunDistance('2');
+    setRunDuration('25');
+    setRunDifficulty('3');
+    setRunNotes('slippery outside');
   }
 
   return (
