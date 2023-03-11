@@ -34,9 +34,6 @@ function DashboardPage () {
   // if click 'ok', run will be deleted from their data
   const deleteRun = (id) => {
     console.log('in deleteRun')
-    // if (confirm("Are you sure you want to delete this run?")) {
-    //   dispatch({type: 'DELETE_RUN', payload: id});
-    // };
     swal({
       title: "",
       text: "Are you sure you want to delete this run?",

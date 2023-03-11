@@ -3,6 +3,7 @@ import { useDispatch, useSelector} from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import './AddRunPage.css'
 import BottomNav from '../BottomNav/BottomNav';
+import { AutoFixNormalOutlined } from '@mui/icons-material';
 
 function AddRunPage() {
   const history = useHistory();
@@ -32,9 +33,20 @@ function AddRunPage() {
     history.push('/dashboard');
   }
 
+  const autoFill = () => {
+    console.log('in autofill onclick function')
+    setRunName('Afternoon Jog')
+    setRunDate('2023-03-15')
+    setRunTime('03:00')
+    setRunDistance('2')
+    setRunDuration('25')
+    setRunDifficulty('3')
+    setRunNotes('slippery outside')
+  }
+
   return (
     <>
-    <h2>Add Run</h2>
+    <h2 onClick = {() => autoFill()}>Add Run</h2>
       <div className='add-run-container'>
       
       <form onSubmit={addNewRun}>
