@@ -29,13 +29,13 @@ Button
 
 .btn {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 5px 10px;
   border-color: #014041;
   border-width: 1px 1px 3px;
   border-radius: 4px;
   background-color: #3395ef;
   color: #f8f8f8;
-  font-size: 1.1rem;
+  font-size: 1.0rem;
   outline: 0;
   cursor: pointer;
 }
@@ -97,14 +97,18 @@ Form Treatment
 -------------------------------------------------------------------------------- */
 
 .formPanel {
-  box-sizing: border-box;
+  /* box-sizing: border-box;
+ 
   width: 400px;
   max-width: 100%;
   padding: 25px;
   margin: 0 auto 20px;
+  
   background-color: #efefef;
   border-radius: 3px;
-  box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4);
+  box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4); */
+  margin-left: 75px;
+  margin-top: 100px;
 }
 
 input {

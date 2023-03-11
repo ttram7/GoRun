@@ -59,7 +59,7 @@ function LoginForm() {
       </div>
       <div>
         <input className="btn" type="submit" name="submit" value="Log In" />
-        <MUIButton type="submit" name="submit" value="Log In" buttonVariant="contained" buttonColor="primary" buttonText="Log In" />
+        {/* <MUIButton variant="contained" color="primary" type="submit" buttonText="Log In" /> */}
       </div>
     </form>
   );
