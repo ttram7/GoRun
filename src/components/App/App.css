@@ -28,7 +28,7 @@ Button
 -------------------------------------------------------------------------------- */
 
 .btn {
-  display: inline-block;
+  /* display: inline-block; */
   padding: 5px 10px;
   border-color: #014041;
   border-width: 1px 1px 3px;
@@ -38,6 +38,7 @@ Button
   font-size: 1.0rem;
   outline: 0;
   cursor: pointer;
+  /* display: flex-end; */
 }
 
 .btn_sizeMin {

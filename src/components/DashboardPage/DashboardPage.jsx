@@ -68,34 +68,37 @@ function DashboardPage () {
           return (
             <div className="indv-run-block" key={run.id}>
               <div className='inner-block'>
-              <div className='difficulty-icon'>
-                {run.difficulty <= 4 &&
-                <WhatshotIcon fontSize="large" color='primary'/>
-                }
-                {run.difficulty > 4  && run.difficulty < 8 &&
-                <WhatshotIcon fontSize="large" color='secondary'/>
-                }
-                {run.difficulty > 7 &&
-                <WhatshotIcon fontSize="large" color='error'/>
-                }
+                <div className='difficulty-icon'>
+                  {run.difficulty <= 4 &&
+                  <WhatshotIcon fontSize="large" color='primary'/>
+                  }
+                  {run.difficulty > 4  && run.difficulty < 8 &&
+                  <WhatshotIcon fontSize="large" color='secondary'/>
+                  }
+                  {run.difficulty > 7 &&
+                  <WhatshotIcon fontSize="large" color='error'/>
+                  }
+                </div>
+                <div className='inner-text'>
+                  <p className='name-text'>{run.name}</p>
+                  <p className='date-text'>{new Date(run.date).toLocaleDateString('en-US')}</p>
+                  <p className='distance-duration-text'>{run.distance} mi.   {run.duration}:00</p>
+                </div>
+                <div className='inner-btns'>
+                  <button className="indv-run-btn" onClick={() => editRun(run)}>Edit</button>
+                  <button className="indv-run-btn" onClick={() => deleteRun(run.id)}>Delete</button>
+                </div> 
+              {/* button container */}
               </div>
-              <div className='inner-text'>
-                <p>{run.name}    {new Date(run.date).toLocaleDateString('en-US')}</p>
-                {/* <br/> */}
-                <p>{run.distance} mi.   {run.duration}:00</p>
-              </div>
-              </div>
-              <div className='inner-btns'>
-                <button className="indv-run-btn" onClick={() => deleteRun(run.id)}>Delete</button>
-                <button className="indv-run-btn" onClick={() => editRun(run)}>Edit</button>
-              </div>
+              {/* inner block */}
             </div>
+            // indv-run-block
           );
         })}
-      </div>
-      {/* <LogOutButton className="btn" /> */}
+      </div> 
+      {/* recent activity container */}
       <BottomNav/>
-    </div>
+    </div> // dashboard container
   );
 }
 

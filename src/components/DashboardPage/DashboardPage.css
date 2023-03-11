@@ -2,7 +2,7 @@
 Button
 -------------------------------------------------------------------------------- */
 .indv-run-btn {
-    padding: 5px 10px;
+    padding: 3px 5px;
     border-color: #014041;
     border-width: 1px 1px 3px;
     border-radius: 4px;
@@ -11,16 +11,17 @@ Button
     font-size: 1.0rem;
     outline: 0;
     cursor: pointer;
-    float: right;
-    
-    
-  }
+    /* padding-right: 5px; */
+    /* align-content: flex-end; */
+    /* justify-content: flex-end; */
+    /* float: right; */     
+ }
 /* --------------------------------------------------------------------------------
 Icon
 -------------------------------------------------------------------------------- */
 .difficulty-icon {
-    width: 50px;
-    padding-top: 30px;
+    /* width: 50px; */
+    /* padding-top: 30px; */
     padding-left: 10px;
 }
 
@@ -36,10 +37,10 @@ h3 {
     /* border-style: solid;
     border-width: 1px; */
     border-radius: 10px;
-    height: 100px;
+    height: 110px;
     width: 328px;
-    padding: 10px;
-    margin-left: 13px;
+    /* padding: 10px; */
+    margin-left: 23px;
     margin-bottom: 20px;
     background-color: white;
     /* display: flex; */
@@ -50,13 +51,29 @@ h3 {
 
 .inner-block {
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    /* justify-content: space-between; */
+    /* justify-content: space-evenly; */
 }
 
 .inner-text {
-    /* text-align: center; */
-    /* display: flex; */
-    padding-left: 10px;
-    padding-top: 5px;
+    /* padding-left: 10px; */
+    /* padding-top: 5px; */
+}
+
+.date-text {
+    font-size: 14px;
+}
+
+.name-text {
+    font-size: 14px;
+}
+
+.distance-duration-text {
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .run-list {
@@ -65,6 +82,7 @@ h3 {
     margin-left: auto;
     margin-right: auto;
     /* padding: 10px; */
+    padding-bottom: 10px;
     background-color: #eeeeee;
     
 }
