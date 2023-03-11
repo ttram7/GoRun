@@ -68,9 +68,16 @@ function DashboardPage () {
           return (
             <div className="indv-run-block" key={run.id}>
               <div className='inner-block'>
-              <div className='difficulty-image'>
-                {/* {run.difficulty >=1 && run.difficulty < 5 : <WhatshotIcon/> ? 'none'} */}
-                <p>Image</p>
+              <div className='difficulty-icon'>
+                {run.difficulty <= 4 &&
+                <WhatshotIcon fontSize="large" color='primary'/>
+                }
+                {run.difficulty > 4  && run.difficulty < 8 &&
+                <WhatshotIcon fontSize="large" color='secondary'/>
+                }
+                {run.difficulty > 7 &&
+                <WhatshotIcon fontSize="large" color='error'/>
+                }
               </div>
               <div className='inner-text'>
                 <p>{run.name}    {new Date(run.date).toLocaleDateString('en-US')}</p>
