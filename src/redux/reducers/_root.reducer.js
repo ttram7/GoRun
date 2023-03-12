@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import errors from './errors.reducer';
 import user from './user.reducer';
-import recentActivityList from './recentActivityList.reducer';
+import recentActivity from './recentActivity.reducer';
 import editRun from './editRun.reducer';
 import weeklyRunList from './weeklyRunList.reducer';
 
@@ -14,7 +14,7 @@ import weeklyRunList from './weeklyRunList.reducer';
 const rootReducer = combineReducers({
   errors, // contains registrationMessage and loginMessage
   user, // will have an id and username if someone is logged in
-  recentActivityList,
+  recentActivity,
   editRun,
   weeklyRunList
 });

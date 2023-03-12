@@ -28,16 +28,34 @@ function StatsGraph() {
   })
   const [chartOptions, setChartOptions] = useState({});
   const dispatch = useDispatch();
-  let dataList = [];
-
+  const [select, setSelect] = useState('');
+  
   useEffect(() => {
-    setGraph(weeklyRunList)
-  }, [])
-
- const setGraph = (weeklyRunList) => {
+    // setGraph(weeklyRunList)
+    setGraph();
+  }, []) //select in []
+  
+  const setGraph = () => {
     console.log('weeklyRunList', weeklyRunList)
+    console.log('select',select)
     const dowList = ['M', 'T', 'W', 'TH', 'F', 'SA', 'SU']
+    let dataList = [];
     
+    // //if (select === '' || select === "week") {
+    //   let i = 0;
+    //   let j = 0;
+    //   while (i < dowList.length) {
+    //     while (j < weeklyRunList.length) {
+    //       if (dowList[i] === weeklyRunList[j].dow_name) {
+    //         dataList.push(weeklyRunList[j].distance)
+    //         j++;
+    //       } else {
+    //         dataList.push(0)
+    //       }
+    //   i++;
+    //   }
+    // }
+  //}
     let i = 0;
     let j = 0;
     while (i < dowList.length) {
@@ -52,11 +70,11 @@ function StatsGraph() {
       i++;
       }
   }
+    if (select === 'month') {
+      dataList = [1, 2, 3, 4, 5, 6, 7]
+    }
     
     console.log('testList: ',dataList)
-
-
-
 
     setChartData({
         labels:['M', 'T', 'W', 'TH', 'F', 'SA', 'SU'],
@@ -78,21 +96,40 @@ function StatsGraph() {
           },
           title: {
             display: true,
-            text: 'Distances for this week',
+            // text: `Distances for this ${select}`,
           },
         },
       });
 }
- console.log(weeklyRunList)
+ //console.log(weeklyRunList)
+ 
+
+ function updateChart(option) {
+
+ }
+
+ const getSum = () => {
+  let weekSum = 0
+  for (let k = 0; k < weeklyRunList.length; k++) {
+    weekSum+=weeklyRunList[k].distance
+  }
+  //console.log(weekSum)
+  return weekSum;
+ }
 return (
       <div>
         <h3>Stats Graph</h3>
+        <select id="time-period" onChange= {(e) => setSelect(e.target.value)}>
+          <option value="week">Week</option>
+          <option value="month">Month</option>
+        </select>
+        {/* <h1>{select}</h1> */}
         <div className="bar-chart">
           <Bar options={chartOptions} data={chartData}/>
         </div>
         <div className='totalStats'>
-          <p>Total miles: </p>
-          <p>Total runs: </p>
+          <p>Total miles: {getSum()} </p>
+          <p>Total runs: {weeklyRunList.length} </p>
         </div>
       </div>
    

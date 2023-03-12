@@ -3,7 +3,7 @@ import { put, takeLatest } from 'redux-saga/effects';
 
 // worker Saga: will be fired on "FETCH_USER" actions
 // READ
-function* fetchRuns() {
+function* fetchRecentActivity() {
   try {
     const config = {
       headers: { 'Content-Type': 'application/json' },
@@ -18,7 +18,7 @@ function* fetchRuns() {
     // now that the session has given us a user object
     // with an id and username set the client-side user object to let
     // the client-side code know the user is logged in
-    yield put({ type: 'SET_RECENT_ACTIVITY_LIST', payload: response.data });
+    yield put({ type: 'SET_RECENT_ACTIVITY', payload: response.data });
   } catch (error) {
     console.log('Run list get request failed', error);
     alert('Something went wrong');
@@ -46,7 +46,7 @@ function* addRun(action) {
       withCredentials: true,
     };
     const response = yield axios.post('/api/runs', action.payload, config);
-    yield put({ type: 'FETCH_RECENT_ACTIVITY_LIST'});
+    yield put({ type: 'FETCH_RECENT_ACTIVITY'});
     yield put({ type: 'FETCH_WEEKLY_RUN_LIST'});
   } catch (error) {
     console.log('Add run failed', error);
@@ -61,7 +61,7 @@ function* deleteRun(action) {
       withCredentials: true,
     };
     const response = yield axios.delete(`/api/runs/${action.payload}`, config);
-    yield put({ type: 'FETCH_RECENT_ACTIVITY_LIST'});
+    yield put({ type: 'FETCH_RECENT_ACTIVITY'});
     yield put({ type: 'FETCH_WEEKLY_RUN_LIST'});
   } catch (error) {
     console.log('Delete run failed', error);
@@ -78,7 +78,7 @@ function* updateRun(action) {
     console.log('in updateRun', action.payload, action.payload.id)
     const response = yield axios.put(`/api/runs/${action.payload.id}`, action.payload, config)
       console.log('put request success');
-    yield put({ type: 'FETCH_RECENT_ACTIVITY_LIST'});
+    yield put({ type: 'FETCH_RECENT_ACTIVITY'});
     yield put({ type: 'FETCH_WEEKLY_RUN_LIST'});
   } catch (error) {
     console.log('Set edit run failed', error);
@@ -88,7 +88,7 @@ function* updateRun(action) {
 
 
 function* runSaga() {
-  yield takeLatest('FETCH_RECENT_ACTIVITY_LIST', fetchRuns);
+  yield takeLatest('FETCH_RECENT_ACTIVITY', fetchRecentActivity);
   yield takeLatest('ADD_RUN', addRun);
   yield takeLatest('DELETE_RUN', deleteRun);
   yield takeLatest('UPDATE_RUN', updateRun);

@@ -11,14 +11,15 @@ import swal from 'sweetalert';
 
 // displays recent activity
 function DashboardPage () {
-  const runList = useSelector(store => store.recentActivityList);
+  const runList = useSelector(store => store.recentActivity);
   const dispatch = useDispatch();
   const history = useHistory();
 
   // shows most recent run data on page load
   useEffect(() => {
-    dispatch({type: 'FETCH_RECENT_ACTIVITY_LIST'});
+    dispatch({type: 'FETCH_RECENT_ACTIVITY'});
     dispatch({type: 'FETCH_WEEKLY_RUN_LIST'});
+    //dispatch({type: 'FETCH_WEEKLY_TOTAL'})
     }, []);
 
   // sends run that's being edited to editReducer
