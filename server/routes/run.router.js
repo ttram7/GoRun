@@ -37,6 +37,20 @@ router.get('/weekly', (req, res) => {
       })
 })
 
+router.get('/monthly', (req, res) => {
+  const sqlText = `SELECT "date", "distance", "duration", EXTRACT (DAY FROM "date") AS day FROM "runs" 
+  WHERE EXTRACT (MONTH FROM "date") = EXTRACT (MONTH FROM NOW()) AND "user_id" = $1 ORDER BY "date" ASC;`
+  pool.query(sqlText, [req.user.id])
+      .then((result) => {
+          console.log(`Got stuff back from the database`, result.rows);
+          res.send(result.rows);
+      })
+      .catch((error) => {
+          console.log(`Error making database query ${sqlText}`, error);
+          res.sendStatus(500); // Good server always responds
+      })
+})
+
 
 /**
  * POST route template

@@ -30,6 +30,8 @@ app.use('/api/user', userRouter);
 app.use('/api/runs', runRouter);
 // get weekly runs
 app.use('/api/runs/weekly', runRouter);
+// get monthly runs
+app.use('/api/runs/monthly', runRouter)
 
 // Serve static files
 app.use(express.static('build'));

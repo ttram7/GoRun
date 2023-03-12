@@ -23,65 +23,76 @@ import {
 
 function StatsGraph() {
   const weeklyRunList = useSelector(store => store.weeklyRunList);
+  const monthlyRunList = useSelector(store => store.monthlyRunList);
   const [chartData, setChartData] = useState({
     datasets: [],
   })
   const [chartOptions, setChartOptions] = useState({});
-  const dispatch = useDispatch();
-  const [select, setSelect] = useState('');
+  //const dispatch = useDispatch();
+  const [select, setSelect] = useState('week');
   
+  // useEffect triggered when select value changes
   useEffect(() => {
-    // setGraph(weeklyRunList)
     setGraph();
-  }, []) //select in []
+  }, [select]) 
   
   const setGraph = () => {
-    console.log('weeklyRunList', weeklyRunList)
     console.log('select',select)
+    console.log('monthlist', monthlyRunList)
     const dowList = ['M', 'T', 'W', 'TH', 'F', 'SA', 'SU']
     let dataList = [];
+    let labelList = [];
+    //let list = []
     
-    // //if (select === '' || select === "week") {
-    //   let i = 0;
-    //   let j = 0;
-    //   while (i < dowList.length) {
-    //     while (j < weeklyRunList.length) {
-    //       if (dowList[i] === weeklyRunList[j].dow_name) {
-    //         dataList.push(weeklyRunList[j].distance)
-    //         j++;
-    //       } else {
-    //         dataList.push(0)
-    //       }
-    //   i++;
-    //   }
-    // }
-  //}
-    let i = 0;
-    let j = 0;
-    while (i < dowList.length) {
-      while (j < weeklyRunList.length) {
+    if (select === '' || select === "week") {
+      let i = 0;
+      let j = 0;
+      labelList = dowList
+      while (i < dowList.length) {
+        while (j < weeklyRunList.length) {
           if (dowList[i] === weeklyRunList[j].dow_name) {
             dataList.push(weeklyRunList[j].distance)
             j++;
-          }
-          else {
+          } else {
             dataList.push(0)
           }
-      i++;
+        i++;
       }
-  }
-    if (select === 'month') {
-      dataList = [1, 2, 3, 4, 5, 6, 7]
     }
+  }
+  
+    if (select === 'month') {
+      labelList = [...Array(32).keys()];
+      labelList.shift();
+      // console.log(labelList.length)
+      // console.log(monthlyRunList.length)
+      let l = 0;
+      let m = 0;
+      //console.log(labelList)
+      while (l < labelList.length) {
+        while (m < monthlyRunList.length) {
+          console.log('label list index:',l, labelList[l])
+          console.log('month index:',m, monthlyRunList[m].day)
+          if (labelList[l] == monthlyRunList[m].day) {
+            dataList.push(monthlyRunList[m].distance)
+            m++;
+          } else {
+            dataList.push(0)
+          }
+        if (m >= monthlyRunList.length) {
+          l = labelList.length + 1;
+        }
+        l++;
+        }
+      }
+    }
+  console.log(dataList)
     
-    console.log('testList: ',dataList)
-
     setChartData({
-        labels:['M', 'T', 'W', 'TH', 'F', 'SA', 'SU'],
+        labels: labelList,
         datasets: [
           {
             label: 'Distance',
-            //data: weeklyRunList.map((run) => run.distance),
             data: dataList,
             borderColor: 'rgb(255, 99, 132)',
             backgroundColor: '#3395ef',
@@ -96,26 +107,19 @@ function StatsGraph() {
           },
           title: {
             display: true,
-            // text: `Distances for this ${select}`,
+            text: `Distances for this ${select}`,
           },
         },
       });
-}
- //console.log(weeklyRunList)
- 
-
- function updateChart(option) {
-
- }
+  }
 
  const getSum = () => {
   let weekSum = 0
   for (let k = 0; k < weeklyRunList.length; k++) {
     weekSum+=weeklyRunList[k].distance
   }
-  //console.log(weekSum)
   return weekSum;
- }
+}
 return (
       <div>
         <h3>Stats Graph</h3>
@@ -123,7 +127,6 @@ return (
           <option value="week">Week</option>
           <option value="month">Month</option>
         </select>
-        {/* <h1>{select}</h1> */}
         <div className="bar-chart">
           <Bar options={chartOptions} data={chartData}/>
         </div>

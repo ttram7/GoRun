@@ -19,6 +19,7 @@ function DashboardPage () {
   useEffect(() => {
     dispatch({type: 'FETCH_RECENT_ACTIVITY'});
     dispatch({type: 'FETCH_WEEKLY_RUN_LIST'});
+    dispatch({type: 'FETCH_MONTHLY_RUN_LIST'});
     //dispatch({type: 'FETCH_WEEKLY_TOTAL'})
     }, []);
 

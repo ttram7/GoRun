@@ -39,6 +39,20 @@ function* fetchWeeklyRuns() {
   }
 }
 
+function* fetchMonthlyRuns() {
+  try {
+    const config = {
+      headers: { 'Content-Type': 'application/json' },
+      withCredentials: true,
+    };
+    const response = yield axios.get('/api/runs/monthly', config);
+    yield put({ type: 'SET_MONTHLY_RUN_LIST', payload: response.data });
+  } catch (error) {
+    console.log('Run list get request failed', error);
+    alert('Something went wrong');
+  }
+}
+
 function* addRun(action) {
   try {
     const config = {
@@ -93,6 +107,7 @@ function* runSaga() {
   yield takeLatest('DELETE_RUN', deleteRun);
   yield takeLatest('UPDATE_RUN', updateRun);
   yield takeLatest('FETCH_WEEKLY_RUN_LIST', fetchWeeklyRuns);
+  yield takeLatest('FETCH_MONTHLY_RUN_LIST', fetchMonthlyRuns);
 }
 
 export default runSaga;
