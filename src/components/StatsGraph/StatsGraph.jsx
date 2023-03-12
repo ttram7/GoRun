@@ -114,12 +114,30 @@ function StatsGraph() {
   }
 
  const getSum = () => {
-  let weekSum = 0
-  for (let k = 0; k < weeklyRunList.length; k++) {
-    weekSum+=weeklyRunList[k].distance
+  if (select === 'week') {
+    let weekSum = 0
+    for (let k = 0; k < weeklyRunList.length; k++) {
+      weekSum+=weeklyRunList[k].distance
+    }
+    return weekSum;
   }
-  return weekSum;
+  if (select === 'month') {
+    let monthSum = 0
+    for (let n = 0; n < monthlyRunList.length; n++) {
+      monthSum+=monthlyRunList[n].distance
+    }
+    return monthSum;
+  }
 }
+  const getTotalRuns = () => {
+    if (select === 'week') {
+      return weeklyRunList.length;
+    }
+    if (select === 'month') {
+      return monthlyRunList.length;
+    }
+  }
+
 return (
       <div>
         <h3>Stats Graph</h3>
@@ -132,7 +150,7 @@ return (
         </div>
         <div className='totalStats'>
           <p>Total miles: {getSum()} </p>
-          <p>Total runs: {weeklyRunList.length} </p>
+          <p>Total runs: {getTotalRuns()} </p>
         </div>
       </div>
    

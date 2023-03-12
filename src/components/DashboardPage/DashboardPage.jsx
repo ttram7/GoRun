@@ -6,6 +6,8 @@ import { useHistory } from 'react-router-dom';
 import './DashboardPage.css'
 import BottomNav from '../BottomNav/BottomNav';
 import WhatshotIcon from '@mui/icons-material/Whatshot';
+import EditIcon from '@mui/icons-material/Edit';
+import ClearIcon from '@mui/icons-material/Clear';
 import swal from 'sweetalert';
 
 
@@ -83,8 +85,10 @@ function DashboardPage () {
                   <p className='distance-duration-text'>{run.distance} mi.   {run.duration}:00</p>
                 </div>
                 <div className='inner-btns'>
-                  <button className="indv-run-btn" onClick={() => editRun(run)}>Edit</button>
-                  <button className="indv-run-btn" onClick={() => deleteRun(run.id)}>Delete</button>
+                  {/* <button className="indv-run-btn" onClick={() => editRun(run)}>Edit</button>
+                  <button className="indv-run-btn" onClick={() => deleteRun(run.id)}>Delete</button> */}
+                  <EditIcon color="primary" onClick={() => editRun(run)} />
+                  <ClearIcon color="primary" onClick={() => deleteRun(run.id)} />
                 </div> 
               {/* button container */}
               </div>
