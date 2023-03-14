@@ -50,11 +50,15 @@ function StatsGraph() {
       labelList = dowList
       while (i < dowList.length) {
         while (j < weeklyRunList.length) {
+          console.log('label list index:',i, labelList[i])
+          console.log('week index:',j, weeklyRunList[j].dow_name)
           if (dowList[i] === weeklyRunList[j].dow_name) {
             dataList.push(weeklyRunList[j].distance)
             j++;
           } else {
             dataList.push(0)
+          } if (j >= weeklyRunList.length) {
+            i = labelList.length;
           }
         i++;
       }
@@ -80,7 +84,7 @@ function StatsGraph() {
             dataList.push(0)
           }
         if (m >= monthlyRunList.length) {
-          l = labelList.length + 1;
+          l = labelList.length;
         }
         l++;
         }
