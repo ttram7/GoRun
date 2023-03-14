@@ -80,7 +80,7 @@ function AddRunPage() {
           <label htmlFor="notes">Notes (optional):</label> 
           <input value={runNotes} onChange={(event) => setRunNotes(event.target.value)} type="text"/>
         </div>
-        <input type="submit"/>
+        <input className="btn" type="submit" value="Save" />
       </form>
     </div>
     <BottomNav/>
