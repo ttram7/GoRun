@@ -48,21 +48,23 @@ function StatsGraph() {
       let i = 0;
       let j = 0;
       labelList = dowList
-      while (i < dowList.length) {
-        while (j < weeklyRunList.length) {
-          console.log('label list index:',i, labelList[i])
-          console.log('week index:',j, weeklyRunList[j].dow_name)
-          if (dowList[i] === weeklyRunList[j].dow_name) {
-            dataList.push(weeklyRunList[j].distance)
-            j++;
-          } else {
-            dataList.push(0)
-          } if (j >= weeklyRunList.length) {
-            i = labelList.length;
+      if (weeklyRunList.length > 0) {
+        while (i < dowList.length) {
+          while (j < weeklyRunList.length) {
+            console.log('label list index:',i, labelList[i])
+            console.log('week index:',j, weeklyRunList[j].dow_name)
+            if (dowList[i] === weeklyRunList[j].dow_name) {
+              dataList.push(weeklyRunList[j].distance)
+              j++;
+            } else {
+              dataList.push(0)
+            } if (j >= weeklyRunList.length) {
+              i = labelList.length;
+            }
+          i++;
           }
-        i++;
+        } 
       }
-    }
   }
   
     if (select === 'month') {
@@ -73,20 +75,22 @@ function StatsGraph() {
       let l = 0;
       let m = 0;
       //console.log(labelList)
-      while (l < labelList.length) {
-        while (m < monthlyRunList.length) {
-          console.log('label list index:',l, labelList[l])
-          console.log('month index:',m, monthlyRunList[m].day)
-          if (labelList[l] == monthlyRunList[m].day) {
-            dataList.push(monthlyRunList[m].distance)
-            m++;
-          } else {
-            dataList.push(0)
+      if (monthlyRunList.length > 0) {
+        while (l < labelList.length) {
+          while (m < monthlyRunList.length) {
+            console.log('label list index:',l, labelList[l])
+            console.log('month index:',m, monthlyRunList[m].day)
+            if (labelList[l] == monthlyRunList[m].day) {
+              dataList.push(monthlyRunList[m].distance)
+              m++;
+            } else {
+              dataList.push(0)
+            }
+          if (m >= monthlyRunList.length) {
+            l = labelList.length;
           }
-        if (m >= monthlyRunList.length) {
-          l = labelList.length;
-        }
-        l++;
+          l++;
+          }
         }
       }
     }
