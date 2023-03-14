@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import { useEffect, useState} from 'react';
 import { useHistory } from 'react-router-dom';
 import './DashboardPage.css'
+import LinearProgress from '@mui/material/LinearProgress';
 import BottomNav from '../BottomNav/BottomNav';
 import WhatshotIcon from '@mui/icons-material/Whatshot';
 import EditIcon from '@mui/icons-material/Edit';
@@ -62,6 +63,7 @@ function DashboardPage () {
   return (
     <div className="dashboard-container">
       <h2>Dashboard</h2>
+      {/* <LinearProgress /> */}
       <div className="run-list">
         <h3>Recent Activity</h3>
         {runList.map(run => {

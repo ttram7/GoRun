@@ -21,10 +21,6 @@ function EditRunPage() {
   console.log(editRun.date);
   console.log((editRun.date).slice(0,10));
 
-  // const handleOnChange = (event) => {
-  //   dispatch({type: 'EDIT_ONCHANGE', payload: {property: 'name', value: event.target.value}})
-  // }
-
   const handleSubmit = (event) => {
     event.preventDefault();
     //console.log(editRunName, editRunDate, id)
@@ -83,7 +79,7 @@ function EditRunPage() {
           <label htmlFor="notes">Notes (optional):</label> 
           <input value={editRunNotes} onChange={(event) => setEditRunNotes(event.target.value)} type="text"/>
         </div>
-        <input type="submit"/> 
+        <input className="btn" type="submit" value="Save" />
       </form>
     </div>
   );
