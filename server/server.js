@@ -10,6 +10,7 @@ const passport = require('./strategies/user.strategy');
 // Route includes
 const userRouter = require('./routes/user.router');
 const runRouter = require('./routes/run.router');
+const weatherRouter = require('./routes/weather.router');
 const statsRouter = require('./routes/stats.router');
 
 // Body parser middleware
@@ -28,10 +29,15 @@ app.use(passport.session());
 app.use('/api/user', userRouter);
 // get run data
 app.use('/api/runs', runRouter);
+<<<<<<< HEAD
 // get weekly runs
 app.use('/api/runs/weekly', runRouter);
 // get monthly runs
 app.use('/api/runs/monthly', runRouter)
+=======
+// get weather data
+app.use('/api/weather', weatherRouter)
+>>>>>>> feature/weather
 
 // Serve static files
 app.use(express.static('build'));
