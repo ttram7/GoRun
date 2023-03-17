@@ -3,19 +3,25 @@ import {useDispatch, useSelector} from 'react-redux';
 import './WeatherSection.css'
 
 function DisplayWeather() {
-  const weather = useSelector((store) => store.weatherData);
-  const [heading, setHeading] = useState('Functional Component');
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch({type:'FETCH_WEATHER_DATA'})
+    const tempData = useSelector((store) => store.weatherData.main);
+    const dispatch = useDispatch();
+    
+    useEffect(() => {
+        dispatch({type:'FETCH_WEATHER_DATA'})
     }, []);
-  
-  
+    
+    const convertToFahrenheit = (temp) => {
+        let tempFahrenheit = Math.round((temp - 273.15) * 1.8 + 32);
+        return tempFahrenheit
+    }
+    console.log(tempData)
+    
   return (
     <div className='weather-box'>
       <h2>Weather</h2>
-      {JSON.stringify(weather)}
+      <p>Temp: {convertToFahrenheit(tempData.temp)}°F</p>
+      <p>Feels like: {convertToFahrenheit(tempData.feels_like)}°F</p>
+      
     </div>
   );
 }
