@@ -29,15 +29,12 @@ app.use(passport.session());
 app.use('/api/user', userRouter);
 // get run data
 app.use('/api/runs', runRouter);
-<<<<<<< HEAD
 // get weekly runs
 app.use('/api/runs/weekly', runRouter);
 // get monthly runs
 app.use('/api/runs/monthly', runRouter)
-=======
 // get weather data
 app.use('/api/weather', weatherRouter)
->>>>>>> feature/weather
 
 // Serve static files
 app.use(express.static('build'));

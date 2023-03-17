@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import { useEffect, useState} from 'react';
 import { useHistory } from 'react-router-dom';
 import './DashboardPage.css'
+import DisplayWeather from '../WeatherSection/WeatherSection';
 import LinearProgress from '@mui/material/LinearProgress';
 import BottomNav from '../BottomNav/BottomNav';
 import WhatshotIcon from '@mui/icons-material/Whatshot';
@@ -62,6 +63,7 @@ function DashboardPage () {
   // each run has an 'edit' and 'delete' btn
   return (
     <div className="dashboard-container">
+      <DisplayWeather />
       <h2>Home</h2>
       {/* <LinearProgress /> */}
       <div className="run-list">

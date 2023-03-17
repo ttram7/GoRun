@@ -3,6 +3,7 @@ import loginSaga from './login.saga';
 import registrationSaga from './registration.saga';
 import userSaga from './user.saga';
 import runSaga from './run.saga';
+import weatherSaga from './weather.saga';
 import statsSaga from './stats.saga';
 
 // rootSaga is the primary saga.
@@ -18,6 +19,7 @@ export default function* rootSaga() {
     registrationSaga(),
     userSaga(),
     runSaga(),
+    weatherSaga(),
     // statsSaga()
   ]);
 }

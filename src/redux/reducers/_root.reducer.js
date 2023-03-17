@@ -5,6 +5,7 @@ import recentActivity from './recentActivity.reducer';
 import editRun from './editRun.reducer';
 import weeklyRunList from './weeklyRunList.reducer';
 import monthlyRunList from './monthlyRunList.reducer';
+import weatherData from './weather.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -18,7 +19,8 @@ const rootReducer = combineReducers({
   recentActivity,
   editRun,
   weeklyRunList,
-  monthlyRunList
+  monthlyRunList,
+  weatherData
 });
 
 export default rootReducer;
