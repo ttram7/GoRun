@@ -62,7 +62,7 @@ function DashboardPage () {
   // each run has an 'edit' and 'delete' btn
   return (
     <div className="dashboard-container">
-      <h2>Dashboard</h2>
+      <h2>Home</h2>
       {/* <LinearProgress /> */}
       <div className="run-list">
         <h3>Recent Activity</h3>

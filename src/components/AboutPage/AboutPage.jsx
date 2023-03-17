@@ -16,6 +16,7 @@ function AboutPage() {
   return (
     <div className="container">
       <div>
+        <h2>About</h2>
         <p>Technologies used:</p>
         <ul>
           <li>React</li>
