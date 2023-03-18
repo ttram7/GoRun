@@ -39,19 +39,8 @@ function Nav() {
         )} */}
 
         {/* If a user is logged in, show these links */}
-        {user.id && (
+        {user.id && location.pathname === '/about' && (
           <>
-            {/* <Link className="navLink" to="/dashboard">
-              Home
-            </Link>
-
-            <Link className="navLink" to="/add-run">
-              Add Run
-            </Link>
-
-            <Link className="navLink" to="/info">
-              Info Page
-            </Link> */}
 
             <LogOutButton className="navLink" />
           </>
