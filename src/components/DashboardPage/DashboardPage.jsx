@@ -69,7 +69,7 @@ function DashboardPage () {
   return (
     <div className="dashboard-container">
       {/* <DisplayWeather /> */}
-      <h2>Home</h2>
+      {/* <h2>Home</h2> */}
       <GoalProgressBar />
       
       {/* <div className='progress-bar'>

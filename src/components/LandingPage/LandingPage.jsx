@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import './LandingPage.css';
+import Button from '@mui/material/Button';
+
 
 // CUSTOM COMPONENTS
 import RegisterForm from '../RegisterForm/RegisterForm';
@@ -17,25 +19,25 @@ function LandingPage() {
   return (
     <div className="container">
       <h2>{heading}</h2>
+      {/* <RegisterForm /> */}
+      <div className='inner-container'>
+        <div className='landing-btns'>
+          {/* <div className='register-btn'>
+            <Button variant="primary" size="lg">Register</Button>
 
-      <div className="grid">
-        <div className="grid-col grid-col_8">
-          
-        </div>
-        <div className="grid-col grid-col_4">
-          <RegisterForm />
+          </div>
+          <Button variant="primary" onClick={onLogin}>Login</Button> */}
+          <button className="btn btn_sizeFull" onClick={onLogin}>
+            Login
+          </button>
 
-          <center>
-            <h4>Already a Member?</h4>
-            {/* <MUIButton className="btn btn_sizeSm" onClick={onLogin}
-            buttonVariant="contained" buttonColor="primary" buttonText="Log In" /> */}
-            <button className="btn btn_sizeSm" onClick={onLogin}>
-              Login
-            </button>
-          </center>
         </div>
+
+      
       </div>
-    </div>
+        
+       
+        </div>
   );
 }
 

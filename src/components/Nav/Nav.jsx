@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import BottomNav from '../BottomNav/BottomNav';
 import './Nav.css';
+import { useEffect, useState} from 'react';
 import { useSelector } from 'react-redux';
 
 // import { BottomNavigation, BottomNavigationAction } from '@mui/material';
@@ -10,13 +11,24 @@ import { useSelector } from 'react-redux';
 
 function Nav() {
   const user = useSelector((store) => store.user);
+  const location = useLocation();
+  console.log('location:', location)
 
   return (
     <>
-    <div className="top-nav">
-      <Link to="/dashboard">
-        <h2 className="top-nav-title">Go Run</h2>
-      </Link>
+      <div className="top-nav">
+        {location.pathname === '/dashboard' &&
+          <h2 className="top-nav-title">Home</h2>
+        }
+        {location.pathname === '/add-run' &&
+          <h2 className="top-nav-title">Add Run</h2>
+        }
+        {location.pathname === '/stats' &&
+          <h2 className="top-nav-title">Progress</h2>
+        }
+        {location.pathname === '/about' &&
+          <h2 className="top-nav-title">About</h2>
+        }
       <div>
         {/* If no user is logged in, show these links */}
         {/* {!user.id && (

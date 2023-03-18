@@ -3,11 +3,12 @@ import { useDispatch, useSelector} from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import './AddRunPage.css'
 import BottomNav from '../BottomNav/BottomNav';
-import { AutoFixNormalOutlined } from '@mui/icons-material';
+
 
 function AddRunPage() {
   const history = useHistory();
   const dispatch = useDispatch();
+ 
 
   const [runName, setRunName] = useState('');
   const [runDate, setRunDate] = useState('');
