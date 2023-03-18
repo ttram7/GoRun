@@ -84,6 +84,12 @@ h3 {
     
 }
 
+.circle-bar{
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+   
+}
 /* .progress-bar{
     width: 200px;
     

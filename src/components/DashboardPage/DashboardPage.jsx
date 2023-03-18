@@ -5,10 +5,8 @@ import { useEffect, useState} from 'react';
 import { useHistory } from 'react-router-dom';
 import './DashboardPage.css'
 import DisplayWeather from '../WeatherSection/WeatherSection';
-
-
-
-
+import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 import BottomNav from '../BottomNav/BottomNav';
 import WhatshotIcon from '@mui/icons-material/Whatshot';
 import EditIcon from '@mui/icons-material/Edit';
@@ -70,6 +68,13 @@ function DashboardPage () {
     <div className="dashboard-container">
       {/* <DisplayWeather /> */}
       {/* <h2>Home</h2> */}
+      <div className='circle-bar'>
+      <CircularProgressbarWithChildren value={70} text="5 / 10 miles"
+      styles={buildStyles({
+        textSize: "15px"
+      })}/>
+
+      </div>
       <GoalProgressBar />
       
       {/* <div className='progress-bar'>
