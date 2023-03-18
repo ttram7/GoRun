@@ -28,7 +28,7 @@ router.get('/weekly', (req, res) => {
   EXTRACT (DOW FROM "date") AS dow_num FROM "runs" WHERE EXTRACT (WEEK FROM "date") = EXTRACT (WEEK FROM NOW()) AND "user_id" = $1 ORDER BY "date" ASC;`
   pool.query(sqlText, [req.user.id])
       .then((result) => {
-          console.log(`Got stuff back from the database`, result.rows);
+          //console.log(`Got stuff back from the database`, result.rows);
           res.send(result.rows);
       })
       .catch((error) => {
@@ -42,7 +42,7 @@ router.get('/monthly', (req, res) => {
   WHERE EXTRACT (MONTH FROM "date") = EXTRACT (MONTH FROM NOW()) AND "user_id" = $1 ORDER BY "date" ASC;`
   pool.query(sqlText, [req.user.id])
       .then((result) => {
-          console.log(`Got stuff back from the database`, result.rows);
+          //console.log(`Got stuff back from the database`, result.rows);
           res.send(result.rows);
       })
       .catch((error) => {

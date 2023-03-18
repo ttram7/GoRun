@@ -24,11 +24,12 @@ import {
 function StatsGraph() {
   const weeklyRunList = useSelector(store => store.weeklyRunList);
   const monthlyRunList = useSelector(store => store.monthlyRunList);
+
   const [chartData, setChartData] = useState({
     datasets: [],
   })
   const [chartOptions, setChartOptions] = useState({});
-  //const dispatch = useDispatch();
+  
   const [select, setSelect] = useState('week');
   
   // useEffect triggered when select value changes
@@ -42,7 +43,6 @@ function StatsGraph() {
     const dowList = ['M', 'T', 'W', 'TH', 'F', 'SA', 'SU']
     let dataList = [];
     let labelList = [];
-    //let list = []
     
     if (select === '' || select === "week") {
       let i = 0;
@@ -70,11 +70,10 @@ function StatsGraph() {
     if (select === 'month') {
       labelList = [...Array(32).keys()];
       labelList.shift();
-      // console.log(labelList.length)
-      // console.log(monthlyRunList.length)
+    
       let l = 0;
       let m = 0;
-      //console.log(labelList)
+    
       if (monthlyRunList.length > 0) {
         while (l < labelList.length) {
           while (m < monthlyRunList.length) {

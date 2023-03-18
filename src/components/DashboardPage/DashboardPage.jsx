@@ -5,12 +5,16 @@ import { useEffect, useState} from 'react';
 import { useHistory } from 'react-router-dom';
 import './DashboardPage.css'
 import DisplayWeather from '../WeatherSection/WeatherSection';
-import LinearProgress from '@mui/material/LinearProgress';
+
+
+
+
 import BottomNav from '../BottomNav/BottomNav';
 import WhatshotIcon from '@mui/icons-material/Whatshot';
 import EditIcon from '@mui/icons-material/Edit';
 import ClearIcon from '@mui/icons-material/Clear';
 import swal from 'sweetalert';
+import GoalProgressBar from '../GoalProgressBar/GoalProgressBar';
 
 
 // displays recent activity
@@ -18,6 +22,8 @@ function DashboardPage () {
   const runList = useSelector(store => store.recentActivity);
   const dispatch = useDispatch();
   const history = useHistory();
+  // const [progress, setProgress] = useState(0);
+  // let progress = 50;
 
   // shows most recent run data on page load
   useEffect(() => {
@@ -60,12 +66,17 @@ function DashboardPage () {
   
 
   // displays most recent runs in runList
-  // each run has an 'edit' and 'delete' btn
   return (
     <div className="dashboard-container">
-      <DisplayWeather />
+      {/* <DisplayWeather /> */}
       <h2>Home</h2>
-      {/* <LinearProgress /> */}
+      <GoalProgressBar />
+      
+      {/* <div className='progress-bar'>
+        <p>Goal: 5 / 10 miles</p>
+        <LinearProgress variant="determinate"style={{padding: "5px"}} value={progress} />
+      </div> */}
+      
       <div className="run-list">
         <h3>Recent Activity</h3>
         {runList.map(run => {
@@ -89,22 +100,16 @@ function DashboardPage () {
                   <p className='distance-duration-text'>{run.distance} mi.   {run.duration}:00</p>
                 </div>
                 <div className='inner-btns'>
-                  {/* <button className="indv-run-btn" onClick={() => editRun(run)}>Edit</button>
-                  <button className="indv-run-btn" onClick={() => deleteRun(run.id)}>Delete</button> */}
                   <EditIcon color="primary" onClick={() => editRun(run)} />
                   <ClearIcon color="primary" onClick={() => deleteRun(run.id)} />
                 </div> 
-              {/* button container */}
               </div>
-              {/* inner block */}
             </div>
-            // indv-run-block
           );
         })}
       </div> 
-      {/* recent activity container */}
       <BottomNav/>
-    </div> // dashboard container
+    </div> 
   );
 }
 

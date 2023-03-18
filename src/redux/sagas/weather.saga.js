@@ -9,6 +9,7 @@ function* fetchWeatherData() {
       withCredentials: true,
     };
     const response = yield axios.get('/api/weather', config);
+    console.log('got weather', response.data );
     yield put({ type: 'SET_WEATHER_DATA', payload: response.data });
   } catch (error) {
     console.log('Weather data get request failed', error);
