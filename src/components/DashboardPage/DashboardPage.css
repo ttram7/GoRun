@@ -30,7 +30,14 @@ h2 {
 }
 
 h3 {
-    padding: 15px; 
+    padding: 15px;
+    width: 150px 
+}
+
+.greeting {
+    display: flex;
+    justify-content: space-evenly;
+
 }
 
 .indv-run-block {

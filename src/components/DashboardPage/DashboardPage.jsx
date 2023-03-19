@@ -68,20 +68,25 @@ function DashboardPage () {
     <div className="dashboard-container">
       {/* <DisplayWeather /> */}
       {/* <h2>Home</h2> */}
-      <div className='circle-bar'>
+      {/* <div className='circle-bar'>
       <CircularProgressbarWithChildren value={70} text="5 / 10 miles"
       styles={buildStyles({
         textSize: "15px"
       })}/>
 
       </div>
-      <GoalProgressBar />
+      <GoalProgressBar /> */}
       
       {/* <div className='progress-bar'>
         <p>Goal: 5 / 10 miles</p>
         <LinearProgress variant="determinate"style={{padding: "5px"}} value={progress} />
       </div> */}
-      
+      <div className='greeting'>
+        <h3>Hello, Tina!</h3>
+        <div className='weather'>
+          <DisplayWeather />
+        </div>
+      </div>
       <div className="run-list">
         <h3>Recent Activity</h3>
         {runList.map(run => {

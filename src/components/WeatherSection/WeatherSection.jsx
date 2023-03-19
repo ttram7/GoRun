@@ -20,15 +20,17 @@ function DisplayWeather() {
     
   return (
     <div className='weather-box'>
-        <div className='weather-icon'>
-            <WbSunnyIcon />
-        </div>
         <div className='info-text'>
             <p>{date}</p>
-            {/* <p>Temp: {convertToFahrenheit(tempData.temp)}°F</p>
-            <p>Feels like: {convertToFahrenheit(tempData.feels_like)}°F</p> */}
         </div>
-      
+        <div className='lower-portion'>
+            <div className='weather-icon'>
+                <WbSunnyIcon />
+            </div>
+            <div>
+                <p>Temp: {convertToFahrenheit(tempData.temp)}°F</p>
+            </div>
+        </div>
     </div>
   );
 }
