@@ -24,23 +24,30 @@ function DisplayWeather() {
         let tempFahrenheit = Math.round((temp - 273.15) * 1.8 + 32);
         return tempFahrenheit
     }
-    // console.log(weatherDescription[0].description)
+    // console.log(weatherDescription[0].icon)
     
   return (
     <div className='weather-box'>
         <div className='info-text'>
-            <p>{date}</p>
+            {tempData.temp && <p>{date}</p>}
         </div>
         <div className='lower-portion'>
             <div className='weather-icon'>
-                <WbSunnyIcon />
+                {/* <WbSunnyIcon /> */}
+                {weatherDescription.map(weather => {
+                    return (
+                        // weather.icon,
+                        <img src ={`http://openweathermap.org/img/w/${weather.icon}.png`} alt="wthr img" />
+                    )})}
             </div>
             <div>
-                <p>Temp: {convertToFahrenheit(tempData.temp)}°F</p>
+                {tempData.temp && <p>Temp: {convertToFahrenheit(tempData.temp)}°F</p>}
               
                 {weatherDescription.map(weather => {
                     return (
-                        weather.main
+                        // weather.icon,
+                        <img src ={`http://openweathermap.org/img/w/${weather.icon}.png`} alt="wthr img" />,
+                        <p>{weather.main}</p>
                     )})}
 
                 {/* <p>{weatherDescription[0].main}</p> */}
