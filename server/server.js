@@ -35,6 +35,7 @@ app.use('/api/runs/weekly', runRouter);
 app.use('/api/runs/monthly', runRouter)
 // get weather data
 app.use('/api/weather', weatherRouter)
+app.use('/api/weather/description', weatherRouter)
 
 // Serve static files
 app.use(express.static('build'));
