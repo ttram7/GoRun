@@ -66,26 +66,28 @@ function DashboardPage () {
   // displays most recent runs in runList
   return (
     <div className="dashboard-container">
-      {/* <DisplayWeather /> */}
-      {/* <h2>Home</h2> */}
-      {/* <div className='circle-bar'>
-      <CircularProgressbarWithChildren value={70} text="5 / 10 miles"
-      styles={buildStyles({
-        textSize: "15px"
-      })}/>
-
-      </div>
-      <GoalProgressBar /> */}
       
+      <div className='greeting'>
+        <div className='circle-bar'>
+        
+        <CircularProgressbarWithChildren value={66}>
+          <div style={{ fontSize: 20, marginTop: -5 }}>
+            <strong>14 Days</strong> 
+          </div>
+        </CircularProgressbarWithChildren>
+        </div> 
+        {/* <h3>Hello, Tina!</h3> */}
+        <div className='weather'>
+          <DisplayWeather />
+        </div>
+      </div>
+      {/* <GoalProgressBar />  */}
       {/* <div className='progress-bar'>
         <p>Goal: 5 / 10 miles</p>
         <LinearProgress variant="determinate"style={{padding: "5px"}} value={progress} />
       </div> */}
-      <div className='greeting'>
-        <h3>Hello, Tina!</h3>
-        <div className='weather'>
-          <DisplayWeather />
-        </div>
+      <div className='countdown'>
+        <h2>14 Days 5 Hours 30 Min</h2>
       </div>
       <div className="run-list">
         <h3>Recent Activity</h3>

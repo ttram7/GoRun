@@ -27,6 +27,7 @@ Icon
 
 h2 {
     padding: 15px;
+    
 }
 
 h3 {
@@ -36,8 +37,16 @@ h3 {
 
 .greeting {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    /* margin-left: 25px; */
 
+}
+.circle-bar{
+    width: 100px;
+    margin-left: 10px; 
+    /* margin-right: 10px; */
+    margin-top: 18px;
+   
 }
 
 .indv-run-block {
@@ -91,12 +100,6 @@ h3 {
     
 }
 
-.circle-bar{
-    width: 100px;
-    margin-left: auto;
-    margin-right: auto;
-   
-}
 /* .progress-bar{
     width: 200px;
     
