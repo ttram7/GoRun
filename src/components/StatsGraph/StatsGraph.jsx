@@ -22,6 +22,7 @@ import {
   );
 
 function StatsGraph() {
+  //const last week run list
   const weeklyRunList = useSelector(store => store.weeklyRunList);
   const monthlyRunList = useSelector(store => store.monthlyRunList);
 

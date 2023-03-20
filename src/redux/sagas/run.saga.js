@@ -39,6 +39,20 @@ function* fetchWeeklyRuns() {
   }
 }
 
+// function* fetchLastWeekRuns() {
+//   try {
+//     const config = {
+//       headers: { 'Content-Type': 'application/json' },
+//       withCredentials: true,
+//     };
+//     const response = yield axios.get('/api/runs/last-week', config);
+//     yield put({ type: 'SET_LAST_WEEK_RUN_LIST', payload: response.data });
+//   } catch (error) {
+//     console.log('Run list get request failed', error);
+//     alert('Something went wrong');
+//   }
+// }
+
 function* fetchMonthlyRuns() {
   try {
     const config = {
@@ -106,6 +120,7 @@ function* runSaga() {
   yield takeLatest('ADD_RUN', addRun);
   yield takeLatest('DELETE_RUN', deleteRun);
   yield takeLatest('UPDATE_RUN', updateRun);
+  // yield takeLatest('FETCH_LAST_WEEK_RUN_LIST', fetchLastWeekRuns);
   yield takeLatest('FETCH_WEEKLY_RUN_LIST', fetchWeeklyRuns);
   yield takeLatest('FETCH_MONTHLY_RUN_LIST', fetchMonthlyRuns);
 }

@@ -20,8 +20,13 @@ function DashboardPage () {
   const runList = useSelector(store => store.recentActivity);
   const dispatch = useDispatch();
   const history = useHistory();
-  // const [progress, setProgress] = useState(0);
-  // let progress = 50;
+  
+  const currentDate = new Date();
+  const raceDate = new Date('04/02/2023')
+  const dayDiff = Math.ceil((raceDate.getTime() - currentDate.getTime())/(1000 * 3600 * 24))
+  console.log(dayDiff)
+
+ 
 
   // shows most recent run data on page load
   useEffect(() => {
@@ -68,14 +73,20 @@ function DashboardPage () {
     <div className="dashboard-container">
       
       <div className='greeting'>
-        <div className='circle-bar'>
-        
+      <div className='countdown-values'>
+          <div className='countdown-value'>
+            <p>Race day in</p>
+            <p className='time-unit'>{dayDiff}</p>
+            <p>days</p>
+          </div>
+        </div>
+        {/* <div className='circle-bar'>
         <CircularProgressbarWithChildren value={66}>
           <div style={{ fontSize: 20, marginTop: -5 }}>
             <strong>14 Days</strong> 
           </div>
         </CircularProgressbarWithChildren>
-        </div> 
+        </div>  */}
         {/* <h3>Hello, Tina!</h3> */}
         <div className='weather'>
           <DisplayWeather />
@@ -86,9 +97,25 @@ function DashboardPage () {
         <p>Goal: 5 / 10 miles</p>
         <LinearProgress variant="determinate"style={{padding: "5px"}} value={progress} />
       </div> */}
-      <div className='countdown'>
-        <h2>14 Days 5 Hours 30 Min</h2>
-      </div>
+      {/* <div className='countdown-container'>
+        <div className='countdown-values'>
+          <div className='countdown-value'>
+            <p className='time-unit'>0</p>
+            <p>days</p>
+          </div>
+          <div className='countdown-value'>
+            <p className='time-unit'>0</p>
+            <p>hours</p>
+          </div>
+          <div className='countdown-value'>
+            <p className='time-unit'>0</p>
+            <p>minutes</p>
+          </div>
+          
+
+        </div>
+
+      </div> */}
       <div className="run-list">
         <h3>Recent Activity</h3>
         {runList.map(run => {

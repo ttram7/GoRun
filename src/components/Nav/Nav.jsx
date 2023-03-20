@@ -17,6 +17,9 @@ function Nav() {
   return (
     <>
       <div className="top-nav">
+        {location.pathname === '/login' &&
+          <h2 className="top-nav-title">Go Run</h2>
+        }
         {location.pathname === '/dashboard' &&
           <h2 className="top-nav-title">Home</h2>
         }

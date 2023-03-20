@@ -25,6 +25,36 @@ Icon
     padding-left: 10px;
 }
 
+.countdown-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.countdown-values{
+    display: flex;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    height: 138px;
+    margin-top: 17px;
+}
+
+.countdown-value{
+    width: 100px;
+    
+    
+}
+
+.time-unit{
+    font-weight: bold;
+    font-size: 2.0rem;
+    /* line-height: 1; */
+    margin: 10px
+}
+
 h2 {
     padding: 15px;
     

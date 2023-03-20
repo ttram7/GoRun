@@ -31,6 +31,8 @@ app.use('/api/user', userRouter);
 app.use('/api/runs', runRouter);
 // get weekly runs
 app.use('/api/runs/weekly', runRouter);
+// get weekly runs
+// app.use('/api/runs/last-week', runRouter);
 // get monthly runs
 app.use('/api/runs/monthly', runRouter)
 // get weather data
