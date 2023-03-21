@@ -91,6 +91,7 @@ function* deleteRun(action) {
     const response = yield axios.delete(`/api/runs/${action.payload}`, config);
     yield put({ type: 'FETCH_RECENT_ACTIVITY'});
     yield put({ type: 'FETCH_WEEKLY_RUN_LIST'});
+    yield put({ type: 'FETCH_MONTHLY_RUN_LIST'});
   } catch (error) {
     console.log('Delete run failed', error);
     alert('Something went wrong');
@@ -108,6 +109,7 @@ function* updateRun(action) {
       console.log('put request success');
     yield put({ type: 'FETCH_RECENT_ACTIVITY'});
     yield put({ type: 'FETCH_WEEKLY_RUN_LIST'});
+    yield put({ type: 'FETCH_MONTHLY_RUN_LIST'});
   } catch (error) {
     console.log('Set edit run failed', error);
     alert('Something went wrong');

@@ -3,6 +3,7 @@ import { useDispatch, useSelector} from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import './AddRunPage.css'
 import BottomNav from '../BottomNav/BottomNav';
+import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
 
 
 function AddRunPage() {
@@ -47,9 +48,11 @@ function AddRunPage() {
 
   return (
     <>
-    <h2 onClick = {() => autoFill()} className='heading'>Add Run</h2>
+    {/* <h2 onClick = {() => autoFill()} className='heading'>Add Run</h2> */}
+        <div className='run-icon'>
+      <DirectionsRunIcon onClick = {() => autoFill()} fontSize="large"/>
+        </div>
       <div className='add-run-container'>
-      
       <form onSubmit={addNewRun}>
         <div>
           <label htmlFor="name">Name:</label> 
