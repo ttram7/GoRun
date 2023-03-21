@@ -1,5 +1,12 @@
 .qr-codes{
     display:flex;
-    justify-content: space-around;
+    justify-content: space-between;
+}
+.linkedin{
+    /* width: 150px; */
+    margin-left: 70px;
+}
 
+.bottom-nav{
+    margin-right: 10px;
 }

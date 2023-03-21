@@ -38,10 +38,10 @@ function AddRunPage() {
   const autoFill = () => {
     console.log('in autofill onclick function');
     setRunName('Easy Jog');
-    setRunDate('2023-03-20');
+    setRunDate('2023-03-21');
     setRunTime('11:00');
-    setRunDistance('4');
-    setRunDuration('45');
+    setRunDistance('2');
+    setRunDuration('25');
     setRunDifficulty('3');
     setRunNotes('slippery outside');
   }

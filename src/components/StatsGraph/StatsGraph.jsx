@@ -147,8 +147,8 @@ function StatsGraph() {
   }
 
 return (
-      <div>
-        <h3>Stats Graph</h3>
+      <div className='graph-section'>
+        <h3>Activity</h3>
         <select className="time-period" onChange= {(e) => setSelect(e.target.value)}>
           <option value="week">Week</option>
           <option value="month">Month</option>

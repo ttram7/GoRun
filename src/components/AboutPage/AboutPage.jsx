@@ -31,16 +31,16 @@ function AboutPage() {
         </ul>
         <br />
         <p>Acknowledgements</p>
-        <p>I'd like to thank all the instructors and staff at Prime, my classmates, and my friends and family.</p>
+        <p>I'd like to thank all the instructors and staff at Prime, my mentors, my classmates, and my friends and family.</p>
         <div className='qr-codes'>
           <div className='github'>
         <img src ="./images/github_qrcode.png" alt="github qr code" width="100px"/>
-        <p>GitHub</p>
+        <p>GitHub: @ttram7</p>
 
           </div>
           <div className='linkedin'>
         <img src ="./images/linkedin_qrcode.png" alt="linkedin qr code" width="100px"/>
-        <p>LinkedIn</p>
+        <p>linkedin.com/in/tina-tram/</p>
 
           </div>
         </div>

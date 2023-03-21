@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector} from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import './EditRunPage.css';
+import BottomNav from '../BottomNav/BottomNav';
 
 function EditRunPage() {
   const editRun = useSelector((store) => store.editRun)
@@ -40,7 +42,8 @@ function EditRunPage() {
   return (
     <div>
       <h2>Edit Run</h2>
-      <div className="edited-run" key={editRun.id}>
+      <div className='edit-run-container'>
+      {/* <div className="edited-run" key={editRun.id}>
               {new Date(editRun.date).toLocaleDateString('en-US')}
               <br/>
               {editRun.name}
@@ -48,7 +51,7 @@ function EditRunPage() {
               {editRun.distance} mi.
               <br/>
               {editRun.duration}:00
-    </div>
+    </div> */}
     <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="name">Name:</label> 
@@ -81,6 +84,8 @@ function EditRunPage() {
         </div>
         <input className="btn" type="submit" value="Save" />
       </form>
+      </div>
+      <BottomNav/>
     </div>
   );
 }

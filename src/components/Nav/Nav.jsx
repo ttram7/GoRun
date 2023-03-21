@@ -26,6 +26,9 @@ function Nav() {
         {location.pathname === '/add-run' &&
           <h2 className="top-nav-title">Add Run</h2>
         }
+        {location.pathname === '/edit-run' &&
+          <h2 className="top-nav-title">Edit Run</h2>
+        }
         {location.pathname === '/stats' &&
           <h2 className="top-nav-title">Progress</h2>
         }
