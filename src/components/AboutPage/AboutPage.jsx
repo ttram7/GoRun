@@ -2,6 +2,7 @@ import React from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import BottomNav from '../BottomNav/BottomNav';
 import { useHistory } from 'react-router-dom';
+import './AboutPage.css'
 
 // This is one of our simplest components
 // It doesn't have local state,
@@ -16,10 +17,10 @@ function AboutPage() {
   return (
     <div className="container">
       <div>
-        <h2>About</h2>
         <p>Technologies used:</p>
         <ul>
           <li>React</li>
+          <li>Redux-Saga</li>
           <li>Node</li>
           <li>Express</li>
           <li>PostgreSQL</li>
@@ -31,9 +32,18 @@ function AboutPage() {
         <br />
         <p>Acknowledgements</p>
         <p>I'd like to thank all the instructors and staff at Prime, my classmates, and my friends and family.</p>
-      </div>
-      <div>
-      {/* <LogOutButton className="navLink" onClick={() => logOut()} /> */}
+        <div className='qr-codes'>
+          <div className='github'>
+        <img src ="./images/github_qrcode.png" alt="github qr code" width="100px"/>
+        <p>GitHub</p>
+
+          </div>
+          <div className='linkedin'>
+        <img src ="./images/linkedin_qrcode.png" alt="linkedin qr code" width="100px"/>
+        <p>LinkedIn</p>
+
+          </div>
+        </div>
       </div>
       <BottomNav />
     </div>
