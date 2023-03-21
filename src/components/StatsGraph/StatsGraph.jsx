@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import axios from 'axios';
+import './StatsGraph.css';
 import {
     Chart as ChartJS,
     CategoryScale,// x axis
@@ -149,7 +149,7 @@ function StatsGraph() {
 return (
       <div>
         <h3>Stats Graph</h3>
-        <select id="time-period" onChange= {(e) => setSelect(e.target.value)}>
+        <select className="time-period" onChange= {(e) => setSelect(e.target.value)}>
           <option value="week">Week</option>
           <option value="month">Month</option>
         </select>

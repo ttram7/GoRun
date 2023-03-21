@@ -9,7 +9,6 @@ function ProgressPage() {
   
   return (
     <div>
-      <h2>Progress Page</h2>
       <StatsGraph />
       <BottomNav />
     </div>

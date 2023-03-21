@@ -22,7 +22,9 @@ function AboutPage() {
           <li>React</li>
           <li>Node</li>
           <li>Express</li>
+          <li>PostgreSQL</li>
           <li>React Chart js 2</li>
+          <li>OpenWeather API</li>
           <li>Material UI</li>
           <li>Sweet Alert</li>
         </ul>

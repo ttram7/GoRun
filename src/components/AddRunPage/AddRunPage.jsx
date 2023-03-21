@@ -47,7 +47,7 @@ function AddRunPage() {
 
   return (
     <>
-    <h2 onClick = {() => autoFill()}>Add Run</h2>
+    <h2 onClick = {() => autoFill()} className='heading'>Add Run</h2>
       <div className='add-run-container'>
       
       <form onSubmit={addNewRun}>
