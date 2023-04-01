@@ -14,15 +14,15 @@ Before you get started, make sure you have the following software installed on y
 - [Nodemon](https://nodemon.io/)
 
 ## Create database and table
-Create a new database called go_run_app
+Create a new database called go_run_app<br>
 SQL table setup can be found in the database.sql file.
 
-## Installation instructions
--Run npm install
--Start postgres
--Run npm run server
--Run npm run client
--Navigate to localhost:3000 in your browser
+## Installation Instructions
+- Run npm install
+- Start postgres
+- Run npm run server
+- Run npm run client
+- Navigate to localhost:3000 in your browser
 
 ## Usage
 1. Register with username and password
@@ -34,20 +34,20 @@ SQL table setup can be found in the database.sql file.
 7. View progress by clicking on the bar icon, where runs will be displayed for the current week or month. 
 
 ## Technologies used
--React
--Redux
--Material UI
--React Chart js 2
--OpenWeather API
--Sweet Alert
--Javascript
--Express
--Postgresql
--Node.js
--PG
--CSS
--HTML
--Passport
+- React
+- Redux
+- Material UI
+- React Chart js 2
+- OpenWeather API
+- Sweet Alert
+- Javascript
+- Express
+- Postgresql
+- Node.js
+- PG
+- CSS
+- HTML
+- Passport
 
 ## Acknowledgement
 
