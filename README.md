@@ -5,7 +5,7 @@ _Duration: 3 Week Sprint_
 
 Go Run is an app that allows users to track their runs and have their data displayed as a graph on a weekly or monthly basis to motivate the user to keep running and maintain that excitement. 
 
-<video src='/media/go-run demo 1.mov' width=180>
+<video src='/media/go-run demo 1.mov'>
 
 ## Prerequisites
 
