@@ -18,7 +18,7 @@ function DashboardPage () {
   const history = useHistory();
   
   const currentDate = new Date();
-  const raceDate = new Date('04/02/2023')
+  const raceDate = new Date('')
   const dayDiff = Math.ceil((raceDate.getTime() - currentDate.getTime())/(1000 * 3600 * 24))
 
   // shows most recent run data on page load
@@ -67,7 +67,7 @@ function DashboardPage () {
       <div className='countdown-values'>
           <div className='countdown-value'>
             <p>Race day in</p>
-            <p className='time-unit'>{dayDiff}</p>
+            <p className='time-unit'>{10}</p>
             <p>days</p>
           </div>
         </div>
